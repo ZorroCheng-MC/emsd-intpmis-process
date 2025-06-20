@@ -1,0 +1,19 @@
+name: Repository Setup Check
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  check-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check repository structure
+        run: |
+          echo "Repository structure:"
+          ls -la
+          echo "Checking required directories..."
+          test -d source && echo "✓ source directory exists"
+          test -d generated && echo "✓ generated directory exists"
+          test -d .github/workflows && echo "✓ workflows directory exists"

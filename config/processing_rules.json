@@ -1,0 +1,36 @@
+{
+  "documentTypes": {
+    "requirements": {
+      "template": "urs_template.docx",
+      "sections": ["introduction", "functional_requirements", "non_functional_requirements", "constraints"],
+      "validation": ["completeness", "consistency", "traceability"]
+    },
+    "system_specification": {
+      "template": "ss_template.docx", 
+      "sections": ["system_overview", "architecture", "interfaces", "data_design"],
+      "validation": ["technical_accuracy", "compliance", "feasibility"]
+    },
+    "operation_manual": {
+      "template": "om_template.docx",
+      "sections": ["installation", "configuration", "operations", "troubleshooting"],
+      "validation": ["clarity", "completeness", "accuracy"]
+    },
+    "test_plan": {
+      "template": "tp_template.docx",
+      "sections": ["test_strategy", "test_cases", "acceptance_criteria", "test_environment"],
+      "validation": ["coverage", "traceability", "feasibility"]
+    }
+  },
+  "workflowStages": [
+    "draft",
+    "internal_review",
+    "technical_review", 
+    "stakeholder_review",
+    "approved"
+  ],
+  "outputFormats": ["docx", "pdf", "html", "markdown"],
+  "qualityChecks": {
+    "mandatory": ["spell_check", "format_validation", "template_compliance"],
+    "optional": ["accessibility_check", "readability_score", "technical_accuracy"]
+  }
+}
