@@ -1,22 +1,18 @@
-<img src="media/image1.jpg" style="width:1.30903in;height:1.30903in" />
+**SYSTEM / OPERATION & USER MANUAL**
 
-**SYSTEM MANUAL**
+**FOR**
 
-**<span class="smallcaps">FOR</span>**
+**Development of I&T Project**
 
-**<span class="smallcaps">COMBINED SYSTEM DEVELOPMENT SERVICES</span>**
+**Management Information System (INTPMIS)**
 
-**<span class="smallcaps">FOR</span>**
+**OF**
 
-**<span class="smallcaps">LICENSING SELF-CERTIFICATION PORTAL</span>**
+**Electrical and Mechanical Services Department**
 
-**<span class="smallcaps">OF THE</span>**
+Version: 0.1
 
-**<span class="smallcaps">BUILDINGS DEPARTMENT</span>**
-
-**Version: 0.1**
-
-**Nov 2024**
+**August 2020**
 
 © The Government of the Hong Kong Special Administrative Region
 
@@ -26,3026 +22,2923 @@ Government of the HKSAR
 
 <table>
 <colgroup>
-<col style="width: 17%" />
-<col style="width: 82%" />
+<col style="width: 29%" />
+<col style="width: 70%" />
 </colgroup>
-<tbody>
-<tr class="odd">
-<td colspan="2"><strong>Distribution</strong></td>
-</tr>
-<tr class="even">
-<td>Copy No.</td>
-<td>Holder</td>
+<thead>
+<tr class="header">
+<th colspan="2"><strong>Distribution</strong></th>
 </tr>
 <tr class="odd">
-<td>1</td>
-<td><blockquote>
-<p>Buildings Department (BD)</p>
-</blockquote></td>
+<th>Copy No.</th>
+<th>Holder</th>
 </tr>
-<tr class="even">
-<td>2</td>
-<td><blockquote>
+<tr class="header">
+<th>1</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>2</th>
+<th><blockquote>
 <p>Master Concept (Hong Kong) Limited</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
-
-|                   |                      |                                      |                           |            |
-|----------|------------------------------|-------------|----------|------------|
-| Amendment History |                      |                                      |                           |            |
-| Change Number     | Revision Description | Pages Affected on Respective Version | Revision / Version Number | Date       |
-| 1                 | 1st draft            | All                                  | 0.1                       | 7/11/2024  |
-| 2                 | 2<sup>nd</sup> draft | All                                  | 0.2                       | 19/11/2024 |
-|                   |                      |                                      |                           |            |
-
-TABLE OF CONTENTS
-
-[1. Purpose 5](#_heading=h.3j2qqm3)
-
-[2. Scope 5](#_heading=h.3znysh7)
-
-[3. Reference 5](#_heading=h.tyjcwt)
-
-[4. Definitions and Convention 6](#_heading=h.206ipza)
-
-> [4.1 Definitions 6](#definitions)
->
-> [4.2 Conventions 6](#conventions)
-
-[5. System Summary 7](#_heading=h.2dlolyb)
-
-> [5.1 Objective 7](#objective)
->
-> [5.2 System Architecture 8](#system-architecture)
->
-> [5.3 System Functions 15](#system-functions)
-
-[6. Equipment Configuration 26](#_heading=h.35nkun2)
-
-> [6.1 Computer Hardware 26](#computer-hardware)
->
-> [6.1.1 Hardware Components 26](#hardware-components)
->
-> [6.1.2 Guest Servers Components 34](#guest-servers-components)
->
-> [6.1.3 Gateway and SMTPX Configuration
-> 36](#gateway-and-smtpx-configuration)
->
-> [6.1.4 Database Configuration 39](#_heading=h.34g0dwd)
->
-> [6.1.5 Detailed Server and Network Configurations
-> 40](#_heading=h.1jlao46)
-
-[7. Software Inventories 45](#_heading=h.2iq8gzs)
-
-> [7.1 Inventory of Application Programs
-> 45](#inventory-of-application-programs)
->
-> [7.2 Inventory of System Software and Software Package
-> 45](#inventory-of-system-software-and-software-package)
-
-[8. Security and Backup 51](#_heading=h.2w5ecyt)
-
-> [8.1 System Control 51](#_heading=h.1baon6m)
->
-> [8.2 Backup 51](#_heading=h.3vac5uf)
->
-> [8.3 Security 52](#_heading=h.2afmg28)
->
-> [8.3.1 Data Transmission Security 52](#data-transmission-security)
->
-> [8.3.2 Data Storage and Auditing Security
-> 52](#data-storage-and-auditing-security)
->
-> [8.3.3 System Security 52](#system-security)
->
-> [8.3.4 Physical Security 53](#physical-security)
->
-> [8.3.5 Password and Group Control 53](#password-and-group-control)
->
-> [8.3.6 Control Procedure of Application User Account and Production
-> Support Account
-> 53](#control-procedure-of-application-user-account-and-production-support-account)
->
-> [8.4 Change Control 54](#_heading=h.3mzq4wv)
->
-> [8.5 Disaster Recovery 54](#_heading=h.2250f4o)
->
-> [8.6 Database Backup Strategy 54](#_heading=h.haapch)
->
-> [8.6.1 SQL Database Backup 54](#sql-database-backup)
->
-> [8.6.2 Recovery 54](#recovery)
->
-> [8.6.3 Backup Schedule 55](#backup-schedule)
-
-[9. Database Administration 57](#database-administration)
-
-> [9.1 Clean Database Transaction Logs 57](#_heading=h.upglbi)
->
-> [9.2 Database Backup 60](#_heading=h.3ep43zb)
->
-> [9.3 System Constraints and Limitations 62](#bookmark=id.1hmsyys)
-
-1.  <span id="_heading=h.3j2qqm3" class="anchor"></span>**Purpose**
-
-The objective of this document is to provide an overview of the system
-by listing out in brief the programs, data files, equipment, clerical
-procedure, computer operation procedure, etc. Reader interested in
-specific area may refer to the corresponding manuals (Data Manual,
-Program Manual, etc.).
-
-The major readers of System Manual are the staff responsible for
-maintaining the application system.
-
-<span id="_heading=h.3znysh7" class="anchor"></span>
-
-1.  **Scope**
-
-The System Manual provides a general overview of the software and
-hardware configurations for LSCP, and shows the system environment
-details such as applications configurations, server and workstation
-information and backup services.
-
-In addition, some major system parameters, system configuration files
-and the system inventory are enclosed in the Appendices.
-
-The major readers of this document are the staff responsible for
-maintaining the application system. Readers interested in specific area
-may refer to the corresponding manuals (Data Manual, Program Manual,
-etc.).
-
-1.  <span id="_heading=h.tyjcwt" class="anchor"></span>**Reference  
-    **
-
--   Training Manual;
-
--   Data Manual;
-
--   Program Manual;
-
--   Application Operation Manual;
-
--   Computer Operation Procedure Manual.
-
-1.  <span id="_heading=h.206ipza" class="anchor"></span>**Definitions
-    and Convention**
-
-## 4.1 Definitions
-
-None.
-
-## 4.2 Conventions
-
-The following acronyms are used in the text of this document: -
-
-<table>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 73%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><blockquote>
-<p><strong><u>Abbreviation</u></strong></p>
 </blockquote></th>
-<th><blockquote>
-<p><strong><u>Description</u></strong></p>
-</blockquote></th>
-</tr>
-<tr class="odd">
-<th><blockquote>
-<p>BD</p>
-</blockquote></th>
-<th><blockquote>
-<p>Buildings Department</p>
-</blockquote></th>
-</tr>
-<tr class="header">
-<th><blockquote>
-<p>LSCP</p>
-</blockquote></th>
-<th><blockquote>
-<p>Licensing Self-Certification Portal</p>
-</blockquote></th>
-</tr>
-<tr class="odd">
-<th><blockquote>
-<p>DMZ</p>
-</blockquote></th>
-<th>Demilitarized Zone</th>
-</tr>
-<tr class="header">
-<th><blockquote>
-<p>SAN</p>
-</blockquote></th>
-<th>Storage Area Network</th>
-</tr>
-<tr class="odd">
-<th><blockquote>
-<p>VM</p>
-</blockquote></th>
-<th><blockquote>
-<p>Virtual Machine</p>
-</blockquote></th>
-</tr>
-<tr class="header">
-<th><blockquote>
-<p>ITU</p>
-</blockquote></th>
-<th>Information Technology Unit</th>
-</tr>
-<tr class="odd">
-<th><blockquote>
-<p>WKGO</p>
-</blockquote></th>
-<th>West Kowloon Government Offices</th>
 </tr>
 </thead>
 <tbody>
 </tbody>
 </table>
 
-1.  <span id="_heading=h.2dlolyb" class="anchor"></span>**System
-    Summary**
-
-## 5.1 Objective
-
-The users of the LSCP can be classified into two categories:
-
--   BD Officers
-
--   Public users involved in site inspection and site monitoring
-
-The primary objective of LSCP is to provide an electronic platform for
-site inspection and site monitoring personnel to provide, manage, and
-review the inspection and monitoring records.
-
-## 5.2 System Architecture
-
-This is an overview of the system structure of LSCP in the Production
-Environment.
-
-<img src="media/image2.png" style="width:6.62605in;height:5.91667in" />
-
-The following diagram illustrates the architecture of the LSCP for
-Production site and UAT site in another perspective.
-
-<img src="media/image3.png" style="width:6.62605in;height:5.81944in" />
-
-The system is holding on two datacenters: On-premise (WKGO) and
-Government Cloud Infrastructure Services (GCIS).
-
-The On-premise system is behind an internal firewall that uses NAT to
-separate into 3 subnets. There are Production, UAT and DEV for internal
-users only.
-
-A reverse proxy server with load balancing function is used for
-increased security and share the incoming requests to the frontend web
-servers.
-
-The system on GCIS is divided into 3 subnets: Internet DMZ (iDMZ),
-Trusted Zone and Gnet DMZ (gDMZ).
-
-Both iDMZ and gDMZ contain a reverse proxy server and a Web Application
-Firewall (WAF) also deployed in front of the iDMZ for increased security
-access.
-
-External users (i.e. public users) access the system from the internet
-through the internet using LSCP Web Application, which interacts with
-the Application Server through the reverse proxy server. The Application
-Server hosts the static web interface files.
-
-To perform system logic, the External Application Servers will pass
-requests to the Web Servers in the Trusted Zone. The web application,
-written in reactjs, will interact with the external web server that is
-written in nodeJS that in turns perform CRUD on the Database Servers,
-which host Microsoft SQL Servers, and the in-built file storage to
-perform logic computing, and return result to the External Web Servers
-then to the internet.
-
-In addition to external users, internal users who would access the
-internal BDSCS application from BD intranet, would connect to the BD Web
-Servers in the Trusted Zone, through the Departmental Portal (OSDP). The
-BD Web Servers perform the same function as the External Web Servers and
-perform user authentication functions when interfaced with the
-Departmental Portal.
-
-Finally, there are some more servers in the Trusted Zone to support
-internal BDSCS application, which includes:
-
--   Log Server to store the system and application log from other
-    > servers
-
--   File Server to store the temporary and permanent files
-
--   Database Server that hosts Microsoft SQL server to store all the
-    > system and user information
-
--   vCenter Server to manage the VM Hypervisors on each of the physical
-    > servers
-
--   Backup Server to keep snapshots of the database
-
-Below are further details of each of the system components in the BDSCS:
-
-<u>External Application Server</u>
-
-The external application servers serve the static web contents in form
-of HTML, CSS, and JavaScript to the internet, through Microsoft's
-Internet Information Services (IIS), and also proxy the backend APIs
-(GraphQL format) to the web application servers as being in the DMZ.
-
-The website hosted on the external web servers is written in JavaScript
-under the React framework. After compiling the JavaScript project, the
-result files are stored in the external web servers and served by IIS,
-with rewrite rules to proxy the backend APIs.
-
-<u>External Web Server</u>
-
-The external web server, in this context, refers to a server that hosts
-and runs the backend API responsible for processing business logic and
-performing database operations. In the case of IIS (Internet Information
-Services) and expressJS, IIS serves as the web server software, while
-ExpressJS represents the framework used for developing the backend
-APIs.  
-  
-The backend API, developed using ExpressJS, encompasses the code that
-handles various tasks, including interacting with databases, executing
-business logic, and processing requests from clients. It acts as the
-intermediary between the frontend (such as a mobile or web application)
-and the underlying data storage.  
-  
-When a client application makes a request to the backend API, IIS
-receives the request and passes it to the appropriate ExpressJS code for
-processing. The backend API then performs the necessary operations,
-which may involve querying the database, executing business rules, or
-performing calculations. Once the processing is complete, the backend
-API generates a response that is sent back to the client application
-(External Application Server in this case) through IIS.
-
-<u>BD Web Servers</u>
-
-The BDSCS backend portal was developed for internal BD users and BD ITU.
-It is using the same technology stack as Extra Application Server but
-just deployed to different zones to ensure security and connectivity for
-internal BD users only
-
-<u>Database Management Servers</u>
-
-Both the internal and external BDSCS applications are built on the
-Microsoft SQL Server database engine.
-
-<u>Web Browser Support</u>
-
-<img src="media/image4.png" style="width:6.62605in;height:2.375in" />
-
-<u>iAM Smart</u>
-
-The iAM Smart system implemented by the Government of Hong Kong focuses
-primarily on providing a secure and convenient login mechanism and
-retrieving basic user information. Pilot CDPSS has integrated with iAM
-Smart authentication module. Users can utilize iAM Smart to log in to
-Pilot CDPSS services and retrieve basic information associated with
-their digital identity.
-
-<u>Departmental Portal</u>
-
-The Departmental Portal is a web service of BD to pass BD user’s
-identity to other wb services including the LSCP. When BD users access
-LSCP website through the Departmental Portal, the user ID will be
-provided to the LSCP to complete the login process without further input
-from the user. This login method only available inside BD’s network.
-
-<u>SMTPX</u>
-
-The notification module in BDSCS would send login one-time password
-(OTP) and email notification by initiating an SMTPX service provided by
-CIS.
-
-<u>MWMS</u>
-
-MWMS would provide data of AP/RSE/RGE/AS acknowledged by BD. Snapshots
-of the MWMS data will be interfaced to BDSCS through SFTP and then
-internal and external BDSCS applications would intake this data by
-processing the batch file auto-generated and delivered from MWMS daily.
-
-<u>BCIS</u>
-
-BCIS would provide address data and BD case data acknowledged by BD. The
-latest copy of the BCIS database would be synced to BDSCS through SQL
-queries at midnight. The data would then be used in both external and
-internal portals for address selection, folio management, and case
-logic. Meanwhile, the new BD cases would be synced to BCIS in real time
-through a SQL stored procedure.
-
-This is an overview of the system structure of Pilot CDPSS in Disaster
-Recovery Environment, similar with the production environment
-
-<img src="media/image5.png" style="width:6.62605in;height:6.44444in" />
-
-## 5.3 System Functions
-
-|               |                                                         |
-|---------------|---------------------------------------------------------|
-| Function ID   | Function Name                                           |
-| UF-WEB-001-1  | Public User Authentication with Password                |
-| UF-WEB-001-2  | Logout system to clear user session                     |
-| UF-WEB-001-3  | Single User Session                                     |
-| UF-WEB-001-4  | GEO and BD User Authentication                          |
-| UF-WEB-001-5  | Public User Authentication with iAM Smart               |
-| UF-WEB-001-6  | Forgot Password                                         |
-| UF-WEB-001-7  | Change Password                                         |
-| UF-WEB-001-8  | Public Users create/register an account                 |
-| UF-WEB-001-9  | User Account Confirmation                               |
-| UF-WEB-001-10 | Resend User Account Confirmation Email                  |
-| UF-WEB-001-11 | User Account Detail Management                          |
-| UF-WEB-001-12 | User Email Address Update Confirmation                  |
-| UF-WEB-001-13 | Public User Accounts Management                         |
-| UF-WEB-001-14 | BD User Accounts Management                             |
-| UF-WEB-001-15 | Public User Account Password Policy                     |
-| UF-WEB-002-1  | Assign TCPs                                             |
-| UF-WEB-002-2  | Request TCP acceptance                                  |
-| UF-WEB-002-3  | Notification for TCP assignment                         |
-| UF-WEB-002-4  | Unassign TCPs                                           |
-| UF-WEB-002-5  | Temporary replacement of Head of Stream                 |
-| UF-WEB-002-6  | Temporary replacement of TCP                            |
-| UF-WEB-002-7  | Resignation of Head of Stream by BD officer             |
-| UF-WEB-002-8  | Notification of Head of Stream resignation              |
-| UF-WEB-003-1  | Listing out responsible Inspection Form                 |
-| UF-WEB-003-2  | Listing out responsible Site-Monitoring Schemes         |
-| UF-WEB-004-1  | Form record submission and amendment                    |
-| UF-WEB-004-2  | Search responsible Site Project                         |
-| UF-WEB-004-3  | Create Site Project from the submitted Supervision plan |
-| UF-WEB-004-4  | Edit and update Site Project Detail                     |
-| UF-WEB-004-5  | List out Site Project                                   |
-| UF-WEB-004-6  | View Site Project Detail                                |
-| UF-WEB-004-7  | Supervision Plan Detail View                            |
-| UF-WEB-004-8  | Supervision Plan Detail Management                      |
-| UF-WEB-004-9  | Import SMIS Excel into CDPSS                            |
-
-1.  <span id="_heading=h.35nkun2" class="anchor"></span>**Equipment
-    Configuration**
-
-##  Computer Hardware 
-
-### Hardware Components
-
-The Configuration of Physical Server in Production
-
-|                            |                         |                             |                |                        |
-|---------------|-------------|--------------|------------|------------------|
-| **Model**                  | **Host Name**           | **IP**                      | **Serial No.** | **Disk Configuration** |
-| Dell PowerEdge R750 Server | prd-scs-admin-server-01 | 192.168.10.22, 10.5.161.206 | F646RX3        | RAID-5                 |
-| Dell PowerEdge R750 Server | prd-scs-admin-server-02 | 192.168.10.23, 10.5.161.207 | D646RX3        | RAID-5                 |
-| Dell PowerEdge R750 Server | prd-scs-nas             | 192.168.10.35, 10.5.161.218 | ???            | ???                    |
-
-The Configuration of SAN storage in Production
-
-|             |                      |                |                       |                                                            |
-|----------------|---------------|--------------|--------------|---------------|
-| **Type**    | **Model**            | **Serial No.** | **No. of hard disks** | **IP Address**                                             |
-| SAN Switch  | Dell DS6610B         | FRC1924T0CC    | N/A                   | 192.168.10.16                                              |
-| SAN Switch  | Dell DS6610B         | FRC1924T0CD    | N/A                   | 192.168.10.17                                              |
-| SAN Storage | Dell PowerStore 500T | HV1NBX3        | 11                    | 192.168.10.26, 192.168.10.27, 192.168.10.28, 192.168.10.29 |
-
-The Configuration of Backup storage in Production
-
-| **Type**         | **Model**            | **Serial No.** | **Volume Size** | **IP Address** |
-|----------------|---------------|--------------|--------------|---------------|
-| Backup Appliance | Dell DataDomain 3300 | 17XMBX3        | 15TB            | 192.168.10.20  |
-
-The Configuration of Tape Library in Production
-
-| **Type**     | **Model** | **Serial No.** | **No. of slots** | **IP Address** |
-|--------------|-----------|----------------|------------------|----------------|
-| Tape Library | Dell ML3  | 3555L3A7801YY0 | 35               | 192.168.10.20  |
-
-The Configuration of Firewalls in Production
-
-|               |                 |                 |                  |                |
-|--------------|-------------|-------------|---------------|-----------------|
-| **Host Name** | **Internal IP** | **External IP** | **Model**        | **Serial No.** |
-| PA-850-SCSPri | 192.168.10.12   | 10.5.161.205    | Palo Alto PA-850 | 11901063047    |
-| PA-850-SCSSec | 192.168.10.13   | 10.5.161.220    | Palo Alto PA-850 | 11901063049    |
-
-The Configuration of switches in Production
-
-| **Host Name** | **Internal IP** | **Model** | **Serial No.** |
-|---------------|-----------------|-----------|----------------|
-|               | 192.168.10.14   | Catalyst  |                |
-|               | 192.168.10.15   | Catalyst  |                |
-
-The Configuration of KVM in Production
-
-|            |                |
-|------------|----------------|
-| **Model**  | **Serial No.** |
-| Cyber View |                |
-
-The Configuration of UPS in Production
-
-|                            |                      |                |
-|----------------------------|----------------------|----------------|
-| **Model**                  | **Serial No.**       | **IP Address** |
-| Vertiv™ Liebert® GXT5 3000 | 2102311887222A010008 | 192.168.11.20  |
-| Vertiv™ Liebert® GXT5 3000 | 2102311887222A010004 | 192.168.11.21  |
-
-Hardware Components of Production Servers
-
 <table>
 <colgroup>
-<col style="width: 5%" />
-<col style="width: 35%" />
-<col style="width: 52%" />
-<col style="width: 6%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Item</strong></td>
-<td><strong>Hardware Component</strong></td>
-<td><strong>Configuration</strong></td>
-<td><strong>Qty</strong></td>
-</tr>
-<tr class="even">
-<td rowspan="5">1</td>
-<td rowspan="5"><p>ESXi Hypervisor Server</p>
-<p>(prd-scs-admin-server-01)</p></td>
-<td>Dell PowerEdge R750</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>32GB DDR4 Synchronous Registered (Buffered)</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>1.2TB SAS HDD</td>
-<td>3</td>
-</tr>
-<tr class="even">
-<td>ESXi 8.0.3</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td rowspan="5">2</td>
-<td rowspan="5"><p>ESXi Hypervisor Server</p>
-<p>(prd-scs-admin-server-02)</p></td>
-<td>Dell PowerEdge R750</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>32GB DDR4 Synchronous Registered (Buffered)</td>
-<td>8</td>
-</tr>
-<tr class="even">
-<td>1.2TB SAS HDD</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td>ESXi 8.0.3</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td rowspan="5">3</td>
-<td rowspan="5"><p>NAS</p>
-<p>(prd-scs-nas)</p></td>
-<td>Dell PowerEdge R750</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>CPU???</td>
-<td>???</td>
-</tr>
-<tr class="even">
-<td>RAM???</td>
-<td>???</td>
-</tr>
-<tr class="odd">
-<td>HDD???</td>
-<td>???</td>
-</tr>
-<tr class="even">
-<td>Windows Server 2022</td>
-<td>???</td>
-</tr>
-<tr class="odd">
-<td rowspan="2">4</td>
-<td rowspan="2"><p>SAN Switch</p>
-<p>(prd-scs-sw-01)</p></td>
-<td>Dell DS6610B</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Ports</td>
-<td>16</td>
-</tr>
-<tr class="odd">
-<td rowspan="2">5</td>
-<td rowspan="2"><p>SAN Switch</p>
-<p>(prd-scs-sw-02)</p></td>
-<td>Dell DS6610B</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>Ports</td>
-<td>16</td>
-</tr>
-<tr class="odd">
-<td rowspan="2">6</td>
-<td rowspan="2"><p>SAN Storage</p>
-<p>(PS500T-Cluster1)</p></td>
-<td>Dell PS500T</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>3.8TB NVME SSD</td>
-<td>11</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td><p>Backup Appliance</p>
-<p>(prd-scs-backupstorage-01)</p></td>
-<td>Dell DataDomain DD3300</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Tape Library</td>
-<td>DELL ML3</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td><p>Firewall</p>
-<p>(PA-850-SCSPri)</p></td>
-<td>Palo Alto PA 850</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td><p>Firewall</p>
-<p>(PA-850-SCSSec)</p></td>
-<td>Palo Alto PA 850</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td><p>Switch</p>
-<p>(???)</p></td>
-<td>Cisco ???</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td><p>Switch</p>
-<p>(???)</p></td>
-<td>Cisco ???</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>KVM</td>
-<td>CyberView</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>UPS<br />
-(???)</td>
-<td>Vertiv™ Liebert® GXT5 3000</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td>UPS<br />
-(???)</td>
-<td>Vertiv™ Liebert® GXT5 3000</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-
-Partition Configuration of Production Servers
-
-| **Host Name**           | **Drive**       | **Capacity** | **Description**              |
-|--------------------|-----------------|----------|--------------------------|
-| prd-scs-admin-server-01 | local           | 2.4TB        | VMware ESXi Operating system |
-| prd-scs-admin-server-02 | local           | 2.4TB        | VMware ESXi Operating system |
-| PS500T-Cluster1         | VM_Volume01     | 20TB         | Shared pool of storage space |
-| PS500T-Cluster1         | QuorumDisk-VM-1 | 2.5GB        | Shared pool of storage space |
-| prd-scs-nas             | C:              | ???          | OS                           |
-|                         | D:              | ???          | Data                         |
-
-The Configuration of Physical Server in DR Site
-
-|                           |                        |                             |                |                        |
-|---------------|-------------|----------------|---------------|--------------|
-| **Model**                 | **Host Name**          | **IP**                      | **Serial No.** | **Disk Configuration** |
-| Dell PowerEdge R750Server | dr-scs-admin-server-01 | 192.168.20.17, 10.5.174.216 | G646RX3        | RAID-5                 |
-| Dell PowerEdge R750Server | dr-scs-nas             | 192.168.20.35, 10.5.174.225 | ???            | ???                    |
-
-The Configuration of SAN storage in DR Site
-
-|             |                      |                |                       |                                                            |
-|----------------|---------------|--------------|--------------|---------------|
-| **Type**    | **Model**            | **Serial No.** | **No. of hard disks** | **IP Address**                                             |
-| SAN Switch  | Dell DS6610B         | FRC1924T0CE    | N/A                   | 192.168.20.14                                              |
-| SAN Storage | Dell PowerStore 500T | 3W1NBX3        | 11                    | 192.168.20.20, 192.168.20.21, 192.168.20.22, 192.168.20.23 |
-
-The Configuration of Backup storage in Production
-
-| **Type**         | **Model**            | **Serial No.** | **Volume Size** | **IP Address** |
-|----------------|---------------|--------------|--------------|---------------|
-| Backup Appliance | Dell DataDomain 3300 | J6XMBX3        | 15TB            | 192.168.20.25  |
-
-The Configuration of Firewalls in DR Site
-
-|               |                 |                 |                  |                |
-|---------------|-------------|-------------|----------------|-----------------|
-| **Host Name** | **Internal IP** | **External IP** | **Model**        | **Serial No.** |
-| PA-850-SCSDR  | 192.168.20.12   | 10.5.174.215    | Palo Alto PA-850 | 011901063069   |
-
-The Configuration of Switches in DR Site
-
-|               |                 |              |                |
-|---------------|-----------------|--------------|----------------|
-| **Host Name** | **Internal IP** | **Model**    | **Serial No.** |
-| ???           | 192.168.20.13   | Catalyst ??? | ???            |
-
-The Configuration of UPS in DR Site
-
-|                            |                      |                |
-|----------------------------|----------------------|----------------|
-| **Model**                  | **Serial No.**       | **IP Address** |
-| Vertiv™ Liebert® GXT5 3000 | 2102311887222A01000A | 192.168.20.11  |
-
-Hardware Components of Disaster Recovery Servers
-
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 34%" />
-<col style="width: 53%" />
-<col style="width: 5%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Item</th>
-<th>Hardware Component</th>
-<th>Configuration</th>
-<th>Qty</th>
+<th><p>Prepared By:</p>
+<p>Derek Chan</p>
+<p>[Programme Manager, MCHK]</p></th>
+<th><p>Endorsed By:</p>
+<p>[ ]</p></th>
 </tr>
 <tr class="odd">
-<th rowspan="5">1</th>
-<th rowspan="5"><p>ESXi Hypervisor Server</p>
-<p>(dr-scs-admin-server-01)</p></th>
-<th>Dell PowerEdge R750</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th>Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz</th>
-<th>1</th>
-</tr>
-<tr class="odd">
-<th>32GB DDR4 Synchronous Registered (Buffered)</th>
-<th>8</th>
-</tr>
-<tr class="header">
-<th>1.2TB SAS HDD</th>
-<th>3</th>
-</tr>
-<tr class="odd">
-<th>ESXi 8.0.3</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th rowspan="5">2</th>
-<th rowspan="5"><p>NAS</p>
-<p>(dr-scs-nas)</p></th>
-<th>Dell PowerEdge R750</th>
-<th>1</th>
-</tr>
-<tr class="odd">
-<th>CPU???</th>
-<th>???</th>
-</tr>
-<tr class="header">
-<th>RAM???</th>
-<th>???</th>
-</tr>
-<tr class="odd">
-<th>HDD???</th>
-<th>???</th>
-</tr>
-<tr class="header">
-<th>Windows Server 2022</th>
-<th>???</th>
-</tr>
-<tr class="odd">
-<th rowspan="2">3</th>
-<th rowspan="2"><p>SAN Switch</p>
-<p>(dr-scs-sw-01)</p></th>
-<th>Dell DS6610B</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th>Ports</th>
-<th>16</th>
-</tr>
-<tr class="odd">
-<th rowspan="2">4</th>
-<th><p>SAN Storage</p>
-<p>(PS500T-Cluster2)</p></th>
-<th>Dell PS500T</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th>DMZ Firewall 1 (CDPDZFW1)</th>
-<th>3.8TB NVME SSD</th>
-<th>11</th>
-</tr>
-<tr class="odd">
-<th>5</th>
-<th><p>Backup Appliance</p>
-<p>(dr-scs-backupstorage-01)</p></th>
-<th>Dell DataDomain DD3300</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th>6</th>
-<th><p>Firewall</p>
-<p>(PA-850-SCSPri)</p></th>
-<th>Palo Alto PA 850</th>
-<th>1</th>
-</tr>
-<tr class="odd">
-<th>7</th>
-<th><p>Switch</p>
-<p>(???)</p></th>
-<th>Cisco ???</th>
-<th>1</th>
-</tr>
-<tr class="header">
-<th>8</th>
-<th>KVM</th>
-<th>CyberView</th>
-<th>1</th>
-</tr>
-<tr class="odd">
-<th>9</th>
-<th>UPS<br />
-(???)</th>
-<th>Vertiv™ Liebert® GXT5 3000</th>
-<th>1</th>
+<th>Date: <u>26/Aug/2020</u></th>
+<th>Date: <u>dd/mm/2020</u></th>
 </tr>
 </thead>
 <tbody>
 </tbody>
 </table>
 
-Partition Configuration of DR Servers
+| **Amendment History** |                      |                                      |                           |             |                    |
+|-----------------------|----------------------|--------------------------------------|---------------------------|-------------|--------------------|
+| Change Number         | Revision Description | Pages Affected on Respective Version | Revision / Version Number | Date        | Approval Reference |
+| 1                     | Initial Version      | All                                  | 1.0                       | 26 Aug 2020 |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
+|                       |                      |                                      |                           |             |                    |
 
-|                        |             |              |                              |
-|--------------------|-----------------|----------|--------------------------|
-| **Host Name**          | **Drive**   | **Capacity** | **Description**              |
-| dr-scs-admin-server-01 | local       | 2.4TB        | VMware ESXi Operating system |
-| PS500T-Cluster2        | VM Volume01 | 20TB         | Shared pool of storage space |
-| dr-scs-nas             | C:          | ???          | OS                           |
-|                        | D:          | ???          | Data                         |
+Table of Contents
 
-### Guest Servers Components
+[***Introduction 3***](#introduction)
 
-Production guest servers
-
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 20%" />
-<col style="width: 10%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Role</strong></th>
-<th><strong>Host Name</strong></th>
-<th><strong>vCPU</strong></th>
-<th><strong>RAM<br />
-(GB)</strong></th>
-<th><strong>Disk<br />
-(GB)</strong></th>
-<th><strong>IP Addresses</strong></th>
-<th><strong>Data Center</strong></th>
-<th><strong>Host Server / Zone</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>vCenter</td>
-<td>prd-scs-<br />
-vcenter-01</td>
-<td>16</td>
-<td>39</td>
-<td>1.33TB</td>
-<td><p>192.168.10.24 /</p>
-<p>10.5.161.210</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Veeam Backup Server</td>
-<td>prd-scs-<br />
-backup-01</td>
-<td>8</td>
-<td>24</td>
-<td><p>300 +</p>
-<p>1TB</p></td>
-<td><p>192.168.10.25 /</p>
-<p>10.5.161.211</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>Kiwi Log<br />
-Server</td>
-<td>prd-scs-<br />
-log-01</td>
-<td>4</td>
-<td>16</td>
-<td><p>300 +</p>
-<p>500</p></td>
-<td><p>192.168.10.11 /</p>
-<p>10.5.161.223</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>NOD32<br />
-Anti-Virus<br />
-Server</td>
-<td>prd-scs-<br />
-esetnod32</td>
-<td>4</td>
-<td>16</td>
-<td>300</td>
-<td><p>192.168.10.34 /</p>
-<p>10.5.161.215</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>API<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-api-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.11</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Frontend<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-frontend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.12</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Backend<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-backend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.13</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>prd-scs-<br />
-db-01</td>
-<td>8</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>500</p></td>
-<td>192.168.12.14</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>File<br />
-Server</td>
-<td>prd-scs-<br />
-filer</td>
-<td>2</td>
-<td>4</td>
-<td><p>100 +</p>
-<p>1TB</p></td>
-<td>192.168.12.20</td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-01</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>prd-scs-<br />
-proxy</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td><p>192.168.12.15 /</p>
-<p>10.5.161.226</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-01</td>
-</tr>
-<tr class="odd">
-<td>API<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-api-02</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.16</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="even">
-<td>Frontend<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-frontend-02</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.17</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>Backend<br />
-Server</td>
-<td>prd-scs-<br />
-admin-<br />
-backend-02</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.12.18</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>prd-scs-<br />
-db-02</td>
-<td>8</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>500</p></td>
-<td>192.168.12.19</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scspwi</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.0.6 /</p>
-<p>45.119.92.84</p></td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>iDMZ</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scspwg</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.4.6 /</p>
-<p>10.160.11.211</p></td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>gDMZ</td>
-</tr>
-<tr class="odd">
-<td>Apps<br />
-Server</td>
-<td>scspad</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>500</p></td>
-<td>192.168.8.6</td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>scspdb</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.8.7</td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="odd">
-<td>Veeam<br />
-Backup<br />
-Server</td>
-<td>scspbk2</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>1TB</p></td>
-<td>192.168.8.9</td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="even">
-<td>Kiwi Log<br />
-Server</td>
-<td>scsplog</td>
-<td>2</td>
-<td>8</td>
-<td><p>100 +</p>
-<p>100</p></td>
-<td>192.168.8.10</td>
-<td><p>GCIS</p>
-<p>P1</p></td>
-<td>Trust Zone</td>
-</tr>
-</tbody>
-</table>
-
-UAT guest servers
-
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 20%" />
-<col style="width: 10%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Role</strong></th>
-<th><strong>Host Name</strong></th>
-<th><strong>vCPU</strong></th>
-<th><strong>RAM<br />
-(GB)</strong></th>
-<th><strong>Disk<br />
-(GB)</strong></th>
-<th><strong>IP Addresses</strong></th>
-<th><strong>Data Center</strong></th>
-<th><strong>Host Server / Zone</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>API<br />
-Server</td>
-<td>uat-scs-<br />
-admin-<br />
-api-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.13.10</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Frontend<br />
-Server</td>
-<td>uat-scs-<br />
-admin-<br />
-frontend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.13.11</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Backend<br />
-Server</td>
-<td>uat-scs-<br />
-admin-<br />
-backend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.13.12</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>uat-scs-<br />
-db-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.13.13</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>File<br />
-Server</td>
-<td>uat-scs-<br />
-filer</td>
-<td>2</td>
-<td>4</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.13.15</td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-01</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>uat-scs-<br />
-proxy</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td><p>192.168.13.14 /</p>
-<p>10.5.161.224</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-01</td>
-</tr>
-<tr class="odd">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scsuwi</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.0.7 /</p>
-<p>45.119.94.99</p></td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>iDMZ</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scsuwg</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.4.7 /</p>
-<p>10.148.11.220</p></td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>gDMZ</td>
-</tr>
-<tr class="odd">
-<td>Apps<br />
-Server</td>
-<td>scsuad</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.8.9</td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>scsudb</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>100</p></td>
-<td>192.168.8.10</td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>Trust Zone</td>
-</tr>
-</tbody>
-</table>
-
-DEV guest servers
-
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 20%" />
-<col style="width: 10%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Role</strong></th>
-<th><strong>Host Name</strong></th>
-<th><strong>vCPU</strong></th>
-<th><strong>RAM<br />
-(GB)</strong></th>
-<th><strong>Disk<br />
-(GB)</strong></th>
-<th><strong>IP Addresses</strong></th>
-<th><strong>Data Center</strong></th>
-<th><strong>Host Server / Zone</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>API<br />
-Server</td>
-<td>dev-scs-<br />
-admin-<br />
-api-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.14.10</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="even">
-<td>Frontend<br />
-Server</td>
-<td>dev-scs-<br />
-admin-<br />
-frontend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.14.11</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>Backend<br />
-Server</td>
-<td>dev-scs-<br />
-admin-<br />
-backend-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.14.12</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>dev-scs-<br />
-db-01</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td>192.168.14.13</td>
-<td>WKGO</td>
-<td>prd-scs-admin-<br />
-server-02</td>
-</tr>
-<tr class="odd">
-<td>File<br />
-Server</td>
-<td>dev-scs-<br />
-filer</td>
-<td>2</td>
-<td>4</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.14.15</td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-02</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>dev-scs-<br />
-proxy</td>
-<td>2</td>
-<td>4</td>
-<td>100</td>
-<td><p>192.168.14.14 /</p>
-<p>10.5.161.225</p></td>
-<td>WKGO</td>
-<td>prd-scs-admin-server-02</td>
-</tr>
-<tr class="odd">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scsdwi</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.0.6 /</p>
-<p>45.119.94.100</p></td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>iDMZ</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scsdwg</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.4.6 /</p>
-<p>10.148.11.220</p></td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>gDMZ</td>
-</tr>
-<tr class="odd">
-<td>Apps<br />
-Server</td>
-<td>scsdad</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.8.7</td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="even">
-<td>Database<br />
-Server</td>
-<td>scsddb</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>100</p></td>
-<td>192.168.8.8</td>
-<td><p>GCIS</p>
-<p>T1</p></td>
-<td>Trust Zone</td>
-</tr>
-</tbody>
-</table>
-
-Disaster Recovery guest servers
-
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 20%" />
-<col style="width: 10%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Role</strong></th>
-<th><strong>Host Name</strong></th>
-<th><strong>vCPU</strong></th>
-<th><strong>RAM<br />
-(GB)</strong></th>
-<th><strong>Disk<br />
-(GB)</strong></th>
-<th><strong>IP Addresses</strong></th>
-<th><strong>Data Center</strong></th>
-<th><strong>Host Server / Zone</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>vCenter</td>
-<td>dr-scs-<br />
-vcenter-01</td>
-<td>16</td>
-<td>39</td>
-<td>1.33TB</td>
-<td><p>192.168.20.18 /</p>
-<p>10.5.174.225</p></td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Veeam Backup Server</td>
-<td>dr-scs-<br />
-backup-01</td>
-<td>8</td>
-<td>24</td>
-<td><p>300 +</p>
-<p>1TB</p></td>
-<td><p>192.168.20.19 /</p>
-<p>10.5.161.224</p></td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Kiwi Log<br />
-Server</td>
-<td>dr-scs-<br />
-log-01</td>
-<td>4</td>
-<td>8</td>
-<td><p>300 +</p>
-<p>500</p></td>
-<td>192.168.20.10</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>API<br />
-Server</td>
-<td>dr-scs-<br />
-admin-<br />
-api-01</td>
-<td>2</td>
-<td>8</td>
-<td>90</td>
-<td>192.168.22.11</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Frontend<br />
-Server</td>
-<td>dr-scs-<br />
-admin-<br />
-frontend-01</td>
-<td>2</td>
-<td>8</td>
-<td>90</td>
-<td>192.168.22.12</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Backend<br />
-Server</td>
-<td>dr-scs-<br />
-admin-<br />
-backend-01</td>
-<td>2</td>
-<td>8</td>
-<td>90</td>
-<td>192.168.22.13</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Database<br />
-Server</td>
-<td>dr-scs-<br />
-db-01</td>
-<td>2</td>
-<td>8</td>
-<td><p>90 +</p>
-<p>500</p></td>
-<td>192.168.22.14</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>File<br />
-Server</td>
-<td>dr-scs-<br />
-filer</td>
-<td>2</td>
-<td>8</td>
-<td><p>90 +</p>
-<p>1TB</p></td>
-<td>192.168.22.16</td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="odd">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>dr-scs-<br />
-proxy</td>
-<td>2</td>
-<td>4</td>
-<td>90</td>
-<td><p>192.168.22.15 /</p>
-<p>10.5.174.228</p></td>
-<td>AIA</td>
-<td>dr-scs-admin-<br />
-server-01</td>
-</tr>
-<tr class="even">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scspwi</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.0.6 /</p>
-<p>45.119.93.84</p></td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>iDMZ</td>
-</tr>
-<tr class="odd">
-<td>Reverse<br />
-Proxy<br />
-Server</td>
-<td>scspwg</td>
-<td>2</td>
-<td>8</td>
-<td>100</td>
-<td><p>192.168.4.6 /</p>
-<p>10.160.139.211</p></td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>gDMZ</td>
-</tr>
-<tr class="even">
-<td>Apps<br />
-Server</td>
-<td>scspad</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>500</p></td>
-<td>192.168.8.6</td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="odd">
-<td>Database<br />
-Server</td>
-<td>scspdb</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>200</p></td>
-<td>192.168.8.7</td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="even">
-<td>Veeam<br />
-Backup<br />
-Server</td>
-<td>scspbk2</td>
-<td>4</td>
-<td>16</td>
-<td><p>100 +</p>
-<p>1TB</p></td>
-<td>192.168.8.9</td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>Trust Zone</td>
-</tr>
-<tr class="odd">
-<td>Kiwi Log<br />
-Server</td>
-<td>scsplog</td>
-<td>2</td>
-<td>8</td>
-<td><p>100 +</p>
-<p>100</p></td>
-<td>192.168.8.10</td>
-<td><p>GCIS</p>
-<p>P2</p></td>
-<td>Trust Zone</td>
-</tr>
-</tbody>
-</table>
-
-### Gateway and SMTPX Configuration
-
-SMTPX
-
-<table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 69%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>SMTPX service hostname</td>
-<td>smtpx.cis.hksarg (resolvable by CCGO DNS)</td>
-</tr>
-<tr class="even">
-<td>SMTPX service IP address</td>
-<td><p>10.106.5.103</p>
-<p>10.106.5.104</p>
-<p>10.106.105.103</p>
-<p>10.106.105.104</p>
-<p>(IP addresses are provided for ACL settings. To enjoy the automatic
-failover feature,</p>
-<p>mail servers should access SMTPX service through hostname.)</p></td>
-</tr>
-<tr class="odd">
-<td>SMTP port number</td>
-<td>587</td>
-</tr>
-<tr class="even">
-<td>Sender IP address</td>
-<td>(B/Ds' IP address within GNET)</td>
-</tr>
-<tr class="odd">
-<td>Login and password</td>
-<td>Not required</td>
-</tr>
-<tr class="even">
-<td>Authentication</td>
-<td>By e-Certificate issued from Hong Kong Post or the Government
-ISCCA</td>
-</tr>
-<tr class="odd">
-<td>Sender address in e-mail</td>
-<td>Valid e-mail address registered in IMX service</td>
-</tr>
-<tr class="even">
-<td>Connection encryption</td>
-<td>STARTTLS (Mandatory)</td>
-</tr>
-<tr class="odd">
-<td>Compatible Protocols</td>
-<td>SPF and DKIM</td>
-</tr>
-</tbody>
-</table>
-
-SMTPX configured in the IIS 6.0 of the following servers
-
-scspwg, scsuwg,scsdwg
-
-WKGO Production Network Gateway
-
-|              |               |                  |                      |
-|--------------|---------------|------------------|----------------------|
-| **Gateway**  | **Subnet**    | **IP Range**     | **vlan / Zone**      |
-| 192.168.10.1 | 255.255.255.0 | 192.168.10.1-254 | Management           |
-| 192.168.11.1 | 255.255.255.0 | 192.168.11.1-254 | Replication / Backup |
-| 192.168.12.1 | 255.255.255.0 | 192.168.12.1-254 | Production           |
-| 192.168.13.1 | 255.255.255.0 | 192.168.13.1-254 | UAT                  |
-| 192.168.14.1 | 255.255.255.0 | 192.168.14.1-254 | DEV                  |
-| 10.5.161.1   | 255.255.255.0 | 10.5.161.205-235 | BD Network           |
-
-AIA DR Network Gateway
-
-|              |               |                  |                      |
-|--------------|---------------|------------------|----------------------|
-| **Gateway**  | **Subnet**    | **IP Range**     | **vlan / Zone**      |
-| 192.168.20.1 | 255.255.255.0 | 192.168.20.1-254 | Management           |
-| 192.168.21.1 | 255.255.255.0 | 192.168.21.1-254 | Replication / Backup |
-| 192.168.22.1 | 255.255.255.0 | 192.168.22.1-254 | Production           |
-| 10.5.174.1   | 255.255.255.0 | 10.5.174.215-234 | BD Network           |
-
-1.  <span id="_heading=h.34g0dwd" class="anchor"></span>Database
-    Configuration
-
-WKGO Production:
-
-> Windows Cluster: prd-scs-db-cl-01 192.168.12.21
+> [**Program Specifications 3**](#program-specifications)
 >
-> Database Availability Group: prd-scs-db-agl 192.168.12.22  
-> Replicas:
+> [Functional Requirements 3](#functional-requirements)
+>
+> [Non-functional Requirements 5](#non-functional-requirements)
+>
+> [Use Case or Scenarios 6](#use-case-or-scenarios)
+>
+> [User Interface (UI) Design 16](#user-interface-ui-design)
+>
+> [System Architecture 25](#system-architecture)
+>
+> [**Training manual and material 27**](#training-manual-and-material)
 
--   prd-scs-db-01 192.168.12.14 (Primary)
+[***System & Programming Manual and Workflow
+28***](#system-programming-manual-and-workflow)
 
--   prd-scs-db-02 192.168.12.19 (Secondary)
+> [**User Login 28**](#user-login)
+>
+> [**Database Structure 29**](#database-structure)
+>
+> [**System structure 30**](#system-structure)
+>
+> [**Website Layout 30**](#website-layout)
+>
+> [**API from innoportal CMS 31**](#api-from-innoportal-cms)
+>
+> [Solution import 31](#solution-import)
+>
+> [Wish import 32](#wish-import)
+>
+> [**INTPMIS Report 33**](#intpmis-report)
+>
+> [Trend of I&T Wishes, Solutions, and Matched Trial Projects Report
+> 34](#trend-of-it-wishes-solutions-and-matched-trial-projects-report)
+>
+> [Summary of I&T Wishes Report 34](#summary-of-it-wishes-report)
+>
+> [Distribution of I&T Solutions by Technology Report
+> 35](#distribution-of-it-solutions-by-technology-report)
+>
+> [Cash flow for Matched Trial Projects on E&M InnoPortal Report
+> 35](#cash-flow-for-matched-trial-projects-on-em-innoportal-report)
+>
+> [Statistics on I&T Projects Report
+> 36](#statistics-on-it-projects-report)
+>
+> [Statistics Technology on I&T Projects Report
+> 37](#statistics-technology-on-it-projects-report)
+>
+> [Expenditure on I&T Projects Report
+> 37](#expenditure-on-it-projects-report)
 
-WKGO UAT:
+[***Users Procedures and Operation Manual
+38***](#users-procedures-and-operation-manual)
 
-> Database: uat-scs-db-01 192.168.13.13
+> [**Login to INTPMIS 38**](#login-to-intpmis)
+>
+> [**Project 39**](#project)
+>
+> [Browsing Project List 39](#browsing-project-list)
+>
+> [Create a Project 41](#create-a-project)
+>
+> [Edit a Project 43](#edit-a-project)
+>
+> [**Wish List 45**](#wish-list)
+>
+> [Browsing Wish List 45](#browsing-wish-list)
+>
+> [Edit a Wish 47](#edit-a-wish)
+>
+> [**Solution List 48**](#solution-list)
+>
+> [Browsing Solution List 48](#browsing-solution-list)
+>
+> [Edit a Solution 49](#edit-a-solution)
 
-WKGO DEV:
+[***Administrator Procedures and Operation Manual
+51***](#administrator-procedures-and-operation-manual)
 
-> Database: dev-scs-db-01 192.168.14.13
+> [**Project 51**](#project-1)
+>
+> [Edit a Project 51](#edit-a-project-1)
+>
+> [**Log List 52**](#log-list)
+>
+> [Browsing Log List 52](#browsing-log-list)
 
-AIA DR:
+# Introduction
 
-> Database: dr-scs-db-01 192.168.22.14
+This System & User Manual intended to provide the necessary information
+to use the I&T Project Management Information System (INTPMIS).
 
-GCIS P1:
+The manual assumed that the working environment of the system is under
+Window10 operation system with IE11 or Chrome browser.
 
-> Database: scspdb 192.168.8.7
+## Program Specifications {#program-specifications .unnumbered}
 
-GCIS UAT:
+### Functional Requirements {#functional-requirements .unnumbered}
 
-> Database: scsudb 192.168.8.10
+1.  Login
 
-GCIS DEV:
+- The system should support single sign on through the Windows Active
+  > Directory
 
-> Database: scsddb 192.168.8.8
+- Support Existing User Permission Matrix Mapping
 
-GCIS P2 DR:
+- If the user is an Acting of another user according to the LDAP login
+  > details, there should be an option for the user to choose whether to
+  > access the INTPMIS as the role of Acting or the original role of the
+  > user
 
-> Database: scspdb 192.168.8.7
+2.  Project List
 
-1.  <span id="_heading=h.1jlao46" class="anchor"></span>Detailed Server
-    and Network Configurations
+- A page allows users to search for the projects
 
-Rack diagram
+- Support sorting and filtering
 
-<img src="media/image6.png" style="width:6.62605in;height:5.30556in" />
+- Allow to export the project list result in file type \".csv\" in the
+  > Project page
 
-1.  External firewall
+- Allow to configure the filtering and sorting criteria
 
-Please reference BD CDPSS - Prod Installation & Operation Manual
-(network) v1.0 Section 1
+- Allow to view / edit project
 
-Please reference BD - VM & Network Upgrade for CDPSS Site Infra
-Configuration Information - 20230427_v0.1 tab - Prod - FW port, Prod -
-FW VIP policy, DR - FW port, DR - FW VIP policy
+3.  Create a Project
 
-(both documents attached below)
+- Allow users to create a project
 
-1.  Internal firewall
+4.  View or Edit a Project
 
-Please reference BD CDPSS - Prod Installation & Operation Manual
-(network) v1.0 Section 2
+- Support read-only and edit mode the permission of the user
 
-Please reference BD - VM & Network Upgrade for CDPSS Site Infra
-Configuration Information - 20230427_v0.1 tab - Prod - FW port, Prod -
-FW VIP policy, DR - FW port, DR - FW VIP policy
+5.  Wish List
 
-1.  Windows NLB
+- A page allows users to search for the wishes
 
-Please reference BD CDPSS - Prod Installation & Operation Manual
-(network) v1.0 Section 3
+- Support sorting and filtering
 
-![](media/image7.emf)![](media/image8.emf)
+- Allow to export the wish list result in file type \".csv\" in the Wish
+  > page
 
-1.  Switches - Prod DMZ Port
+- Allow to configure the filtering and sorting criteria
 
-<img src="media/image9.png" style="width:6.62569in;height:5.86111in" />
+- Allow to view / edit wish
 
-1.  Switches - Prod INT SW Port
+6.  View or Edit a Wish
 
-<img src="media/image10.png" style="width:6.62569in;height:5.75in" />
+- Support read-only and edit mode the permission of the user
 
-1.  Switches – DR DMZ SW Port
+7.  Solution List
 
-<img src="media/image11.png" style="width:6.62569in;height:3.43056in" />
+- A page allows users to search for the solutions
 
-1.  Switches – DR INT SW Port
+- Support sorting and filtering
 
-<img src="media/image12.png" style="width:6.62569in;height:3.66667in" />
+- Allow to export the solution list result in file type \".csv\" in the
+  > Solution page
 
-1.  <span id="_heading=h.2iq8gzs" class="anchor"></span>**Software
-    Inventories**
+- Allow to configure the filtering and sorting criteria
 
-### 7.1 Inventory of Application Programs
+- Allow to view / edit solution
 
-For details of Application Programs for LSCP, please refer to Program
-Manual (T352).
+8.  View and Edit a Solution
 
-### 7.2 Inventory of System Software and Software Package
+- Support read-only and edit mode the permission of the user
 
-Summary of software required is given in the following table:
+9.  Report List
 
-<u>Production Environment – WKGO</u>
+- Support sorting and filtering
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>NAS</td>
-<td>prd-scs-nas</td>
-<td>???</td>
-</tr>
-<tr class="odd">
-<td><p>Veeam Backup</p>
-<p>Server</p></td>
-<td>prd-scs-backup-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Veeam Backup &amp; Replication 12.1.2.172</p></td>
-</tr>
-<tr class="even">
-<td>Kiwi Log Server</td>
-<td>prd-scs-log-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Kiwi Syslog Server NG 1.2.1.4</p></td>
-</tr>
-<tr class="odd">
-<td>NOD32 Anti-Virus Server</td>
-<td>prd-scs-esetnod32</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>ESET PROTECT Server 11.0.199.0</p></td>
-</tr>
-<tr class="even">
-<td>API Server</td>
-<td><p>prd-scs-admin-api-01</p>
-<p>prd-scs-admin-api-02</p></td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Frontend Server</td>
-<td><p>prd-scs-admin-frontend-01</p>
-<p>prd-scs-admin-frontend-02</p></td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>IIS 10.0.20348.1</p></td>
-</tr>
-<tr class="even">
-<td>Backupend Server</td>
-<td><p>prd-scs-admin-backend-01</p>
-<p>prd-scs-admin-backend-02</p></td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Database Server</td>
-<td><p>prd-scs-db-01</p>
-<p>prd-scs-db-02</p></td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-<tr class="even">
-<td>File Server</td>
-<td>prd-scs-filer</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Reverse Proxy Server</td>
-<td>prd-scs-proxy</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="even">
-<td>vCenter</td>
-<td>prd-scs-vcenter-01</td>
-<td>vCenter 8.0.3 Build 24322831</td>
-</tr>
-<tr class="odd">
-<td>VM Host</td>
-<td><p>prd-scs-admin-server-01</p>
-<p>prd-scs-admin-server-02</p></td>
-<td>VMWare vSphere 8.0.3 Build 24022510</td>
-</tr>
-</tbody>
-</table>
+- Allow to export the report list result in file type \".csv\" in the
+  > Report page
 
-\*VMware vSphere is a suite of software components for virtualization.
-These include ESXi, vCenter Server, and other software components such
-as vCenter Single Sign-On, and vCenter Server plug-ins that fulfill
-several different functions in the vSphere environment.
+- Allow to configure the filtering and sorting criteria
 
-*https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-management/GUID-B3A1A79B-EF9B-4C10-A053-D54D88254C52.html*
+- Allow to view / edit report
 
-<u>UAT Environment – WKGO</u>
+10. View Report
 
-<table>
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 28%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>API Server</td>
-<td>uat-scs-admin-api-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Frontend Server</td>
-<td>uat-scs-admin-frontend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>IIS 10.0.20348.1</p></td>
-</tr>
-<tr class="even">
-<td>Backupend Server</td>
-<td>uat-scs-admin-backend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Database Server</td>
-<td>uat-scs-db-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-<tr class="even">
-<td>File Server</td>
-<td>uat-scs-filer</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Reverse Proxy Server</td>
-<td>uat-scs-proxy</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-</tbody>
-</table>
+- Support read-only mode the permission of the user
 
-<u>DEV Environment – WKGO</u>
+11. Log List
+
+- Support sorting and filtering
+
+- Allow to export the log list result in file type \".csv\" in the
+  > Report page
+
+- Allow to configure the filtering and sorting criteria
+
+- Allow to view / edit log
+
+12. View Log List
+
+- Support read-only mode the permission of the user
+
+13. Upload File
+
+- Allow users to upload multiple formats of files, such as pdf, jpeg,
+  > docx, xls
+
+- Users can replace the files
+
+- The files can be deleted
+
+### Non-functional Requirements {#non-functional-requirements .unnumbered}
+
+1.  Response Time
+
+- The response time for predefined query should be 95% within 5 seconds,
+  > subject to confirmation of the selected technical solution.
+
+2.  Service Time
+
+- The access to the new system would be 08:00 to 20:00 daily, and late
+  > night provisionally. 7x24 availability is not required.
+
+- Achieve availability of 99.0% (i.e. unscheduled downtime could not
+  > exceed 7.2 minutes per day or 1.83 days per year on average).
+
+3.  Export
+
+- Allow data of tables to be exported in different external
+  > easy-readable formats such as Excel.
+
+4.  Scalability
+
+- Provide scalability options of hardware, software, etc. for future
+  > system expansion.
+
+5.  System Performance
+
+- Provide technically sound architecture to meet response time and
+  > agreed performance level.
+
+6.  User Interface Requirement
+
+- The user-interfaces and graphical user interface (GUI) must be
+  > user-friendly. Based on the user profile, personalised views can be
+  > provided. The interface of the solution should be consistent with
+  > web-based applications.
+
+- Adopt responsive web design to adjust layout according to different
+  > screen sizes in order to facilitate users' browsing experience in
+  > devices including but not limited to desktops, tablets and mobile
+  > phones.
+
+- Function and display properly in multiple browsers including Internet
+  > Explorer and Chrome with Apollo support version.
+
+7.  Function Access Rights
+
+- Able to define various user access rights of functions according to
+  > operations or user levels (access right can be assigned to the user
+  > group or individual user).
+
+8.  Access to Data
+
+- Able to define access rights for users to access particular data and
+  > also on a conditional basis.
+
+- Able to define access monitoring for the selected data.
+
+9.  System Backup
+
+- Able to meet general backup requirements including data and system;
+  > and all audit logging information.
+
+### Use Case or Scenarios {#use-case-or-scenarios .unnumbered}
 
 <table>
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 28%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>API Server</td>
-<td>dev-scs-admin-api-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Frontend Server</td>
-<td>dev-scs-admin-frontend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>IIS 10.0.20348.1</p></td>
-</tr>
-<tr class="even">
-<td>Backupend Server</td>
-<td>dev-scs-admin-backend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Database Server</td>
-<td>dev-scs-db-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-<tr class="even">
-<td>File Server</td>
-<td>dev-scs-filer</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="odd">
-<td>Reverse Proxy Server</td>
-<td>dev-scs-proxy</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-</tbody>
-</table>
-
-<u>Production Environment – GCIS P1</u>
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
 <col style="width: 27%" />
-<col style="width: 52%" />
+<col style="width: 72%" />
 </colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>SSO Login</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user logging into
+the INTPMIS</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th>The user has an account with the application</th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>User gets an authentication ID from EMSD Active Directory</p>
+</blockquote></li>
+<li><blockquote>
+<p>The system will call LDAP API to get users authentication code and
+information by the staff ID</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The landing page will be shown</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th>The user name login page will be shown</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td><p>Veeam Backup</p>
-<p>Server</p></td>
-<td>scspbk2</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Veeam Backup &amp; Replication 12.1.2.172</p></td>
-</tr>
-<tr class="odd">
-<td>Kiwi Log Server</td>
-<td>scsplog</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Kiwi Syslog Server 9.8.3 (Service Edition)</p></td>
-</tr>
-<tr class="even">
-<td>Reverse Proxy Server</td>
-<td><p>scspwi</p>
-<p>scspwg</p></td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="odd">
-<td>Application Server</td>
-<td>scspad</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>IIS 10.0.17763.1</p></td>
-</tr>
-<tr class="even">
-<td>Database Server</td>
-<td>scspdb</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
 </tbody>
 </table>
-
-<u>UAT Environment – GCIS T1</u>
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>Reverse Proxy Server</td>
-<td><p>scsuwi</p>
-<p>scsuwg</p></td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="odd">
-<td>Application Server</td>
-<td>scsuad</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>IIS 10.0.17763.1</p></td>
-</tr>
-<tr class="even">
-<td>Database Server</td>
-<td>scsudb</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-</tbody>
-</table>
-
-<u>DEV Environment – GCIS T1</u>
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>Reverse Proxy Server</td>
-<td><p>scsdwi</p>
-<p>scsdwg</p></td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="odd">
-<td>Application Server</td>
-<td>scsdad</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>IIS 10.0.17763.1</p></td>
-</tr>
-<tr class="even">
-<td>Database Server</td>
-<td>scsddb</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-</tbody>
-</table>
-
-<u>DR Environment – AIA</u>
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td>NAS</td>
-<td>prd-scs-nas</td>
-<td>???</td>
-</tr>
-<tr class="odd">
-<td><p>Veeam Backup</p>
-<p>Server</p></td>
-<td>dr-scs-backup-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Veeam Backup &amp; Replication 12.1.2.172</p></td>
-</tr>
-<tr class="even">
-<td>Kiwi Log Server</td>
-<td>dr-scs-log-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Kiwi Syslog Server NG 1.2.1.4</p></td>
-</tr>
-<tr class="odd">
-<td>API Server</td>
-<td>dr-scs-admin-api-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="even">
-<td>Frontend Server</td>
-<td>drd-scs-admin-frontend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>IIS 10.0.20348.1</p></td>
-</tr>
-<tr class="odd">
-<td>Backupend Server</td>
-<td>dr-scs-admin-backend-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="even">
-<td>Database Server</td>
-<td>dr-scs-db-01</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-<tr class="odd">
-<td>File Server</td>
-<td>dr-scs-filer</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p></td>
-</tr>
-<tr class="even">
-<td>Reverse Proxy Server</td>
-<td>dr-scs-proxy</td>
-<td><p>Windows Server 2022 21H2</p>
-<p>VMware Tools 12.4.0.23259341</p>
-<p>ESET Server Security 10.0.12012.0</p>
-<p>ESET Management Agent 10.1.1292.0</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="odd">
-<td>vCenter</td>
-<td>dr-scs-vcenter-01</td>
-<td>vCenter 8.0.3 Build 24322831</td>
-</tr>
-<tr class="even">
-<td>VM Host</td>
-<td>dr-scs-admin-server-01</td>
-<td>VMWare vSphere 8.0.3 Build 24022510</td>
-</tr>
-</tbody>
-</table>
-
-\*VMware vSphere is a suite of software components for virtualization.
-These include ESXi, vCenter Server, and other software components such
-as vCenter Single Sign-On, and vCenter Server plug-ins that fulfill
-several different functions in the vSphere environment.
-
-*https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-management/GUID-B3A1A79B-EF9B-4C10-A053-D54D88254C52.html*
-
-<u>Production Environment (Replicate from P1)– GCIS P2</u>
-
-<table style="width:100%;">
-<colgroup>
-<col style="width: 19%" />
-<col style="width: 27%" />
-<col style="width: 52%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Machine</td>
-<td>Hostname</td>
-<td>Software</td>
-</tr>
-<tr class="even">
-<td><p>Veeam Backup</p>
-<p>Server</p></td>
-<td>scspbk2</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Veeam Backup &amp; Replication 12.1.2.172</p></td>
-</tr>
-<tr class="odd">
-<td>Kiwi Log Server</td>
-<td>scsplog</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Kiwi Syslog Server 9.8.3 (Service Edition)</p></td>
-</tr>
-<tr class="even">
-<td>Reverse Proxy Server</td>
-<td><p>scspwi</p>
-<p>scspwg</p></td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Nginx 1.26.2</p></td>
-</tr>
-<tr class="odd">
-<td>Application Server</td>
-<td>scspad</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>IIS 10.0.17763.1</p></td>
-</tr>
-<tr class="even">
-<td>Database Server</td>
-<td>scspdb</td>
-<td><p>Windows Server 2019 1809</p>
-<p>VMware Tools 12.1.0.20219665</p>
-<p>Bitdefender Endpoint Security Tools 7.9.17.458</p>
-<p>Microsoft SQL Server 2022 16.0.1000.6</p>
-<p>Microsoft Management Studio 19.1</p></td>
-</tr>
-</tbody>
-</table>
-
-Framework using during development
 
 <table>
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 54%" />
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>User Name Login</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user logging into
+the INTPMIS</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th>The user has an account with the application</th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Open a browser (Internet Explorer/ Chrome)</p>
+</blockquote></li>
+<li><blockquote>
+<p>Go to http://intpmis/#/login</p>
+</blockquote></li>
+<li><blockquote>
+<p>Input email address and password</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click "Sign In" button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The page is navigated to the landing page</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th>Login fail and an error prompt is shown.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Create Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user creating a new
+project in the project management</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has the necessary permissions to create a project.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “Create” under “Project Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Fill the required fields</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Submit” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>Project is created successfully and a successful message is shown
+with the project number</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th><ol type="1">
+<li><blockquote>
+<p>Input field is not filled</p>
+</blockquote></li>
+</ol>
+<blockquote>
+<p>The error message is shown under the field</p>
+</blockquote>
+<ol start="2" type="1">
+<li><blockquote>
+<p>Value is not valid</p>
+</blockquote></li>
+</ol>
+<blockquote>
+<p>The error message is shown</p>
+</blockquote></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Edit Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user editing an
+existing project in the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has the necessary permissions to create a project.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “Edit” under “Project Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click edit icon to edit the project</p>
+</blockquote></li>
+<li><blockquote>
+<p>To edit information of the project, users can:</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>select completed</p>
+</blockquote></li>
+<li><blockquote>
+<p>input values</p>
+</blockquote></li>
+<li><blockquote>
+<p>empty input</p>
+</blockquote></li>
+</ul></li>
+<li><blockquote>
+<p>Then click “Save All” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>Save successfully and an successful message is shown</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th>Invalid input and an alert message is shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>View Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user viewing the
+details of an existing project in the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the project they want to view</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “View” under “Project Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Scroll the bottom bar to the right to show the project detail</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The user has viewed the details of the selected project.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Filter Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user filtering for
+specific projects within the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the project management list displaying a list of
+projects.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Input filter value</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select display number of record per page</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The results are shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Search Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user searching for a
+specific project within the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the project management list displaying a list of
+projects.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click search section</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select search criteria</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select values of criteria</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Search” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The results are shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Export Project</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user exporting
+project data from the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the project management list displaying a list of
+projects.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><p>There are two options for exporting project</p>
+<ul>
+<li><blockquote>
+<p>Export searched records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export Records” button</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>Export all records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The exported results will be stored in a csv file</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Edit Wish</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user editing the
+details of an existing wish in the wish management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the wish they want to edit</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Input value to edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Save All” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>Wish is edited successfully and an alert message is shown</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th>Invalid input and an alert message is shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>View Wish</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user viewing the
+details of an existing wish in the wish management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the wish they want to view</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “View” under “Wish Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Scroll the bottom bar to right to view detail of the wish</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The user has viewed the details of the selected wish.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Search Wish</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user searching for a
+specific wish within the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the wish management list displaying a list of
+wishes.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click search section</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select search criteria</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select values of criteria</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Search” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The results are shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Filter Wish</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user filtering for a
+specific wish within the project management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the wish management list displaying a list of
+wishes.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Input filter value</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select display number of record per page</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The results are shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Export Wish</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user exporting wish
+data from the wish management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the wish management list displaying a list of
+wishes.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><p>There are two options for exporting wish</p>
+<ul>
+<li><blockquote>
+<p>Export searched records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export Records” button</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>Export all records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The exported results will be stored in a csv file</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Edit Solution</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user editing the
+details of an existing solution in solution management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the solution they want to edit</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Input value to edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Save All” button</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>Solution is edited successfully and an alert message is shown</th>
+</tr>
+<tr class="header">
+<th>Alternative Scenario</th>
+<th>Invalid input and an alert message is shown</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>View Solution</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user viewing the
+details of an existing solution in solution management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the solution they want to view</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “View” under “Solution Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Scroll the bottom bar to right to view detail of the solution</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The user has viewed the details of the selected solution.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Export Solution</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user exporting
+solution data from the solution management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application.</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user is on the solution management list displaying a list of
+wishes.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><p>There are two options for exporting solution</p>
+<ul>
+<li><blockquote>
+<p>Export searched records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export Records” button</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>Export all records</p>
+</blockquote></li>
+</ul>
+<blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The exported results will be stored in a csv file</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>View Report</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user viewing reports
+in report management.</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Click “View” under “Report Management”</p>
+</blockquote></li>
+<li><blockquote>
+<p>Scroll down to view more reports</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The user has viewed reports.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Print Report</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user printing a
+report</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the report they want to print</p>
+</blockquote></li>
+<li><blockquote>
+<p>The report is displayed or accessible on the application's
+interface</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Select the period of the report</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select the other day for the report</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Confirm” button</p>
+</blockquote></li>
+<li><blockquote>
+<p>The report is shown</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Print” to print all report</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user has successfully printed the report with the chosen print
+settings.</p>
+</blockquote></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>View and Export Log</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user viewing and
+exporting log</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has access to the logs they want to export</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><ul>
+<li><blockquote>
+<p>Select tag type of log</p>
+</blockquote></li>
+<li><blockquote>
+<p>Log records are shown in list</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “+” button to view log detail</p>
+</blockquote></li>
+<li><blockquote>
+<p>Click “Export Records” button to export records to a csv file</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The logs are exported to a csv file</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use Case</th>
+<th>Cancel Reminder</th>
+</tr>
+<tr class="odd">
+<th>Actor</th>
+<th>User</th>
+</tr>
+<tr class="header">
+<th>Description</th>
+<th>This use case describes the steps involved in a user cancelling a
+reminder</th>
+</tr>
+<tr class="odd">
+<th>Preconditions</th>
+<th><ul>
+<li><blockquote>
+<p>The user is logged into the application</p>
+</blockquote></li>
+<li><blockquote>
+<p>The user has created a reminder</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="header">
+<th>Main Scenario</th>
+<th><p>There are two options to cancel reminder(s):</p>
+<ul>
+<li><blockquote>
+<p>Click checked button to cancel the reminder of a record</p>
+</blockquote></li>
+<li><blockquote>
+<p>Select multiple records and click batch checked to cancel reminder of
+selected records</p>
+</blockquote></li>
+</ul></th>
+</tr>
+<tr class="odd">
+<th>Postconditions</th>
+<th>The reminder is cancelled</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+### User Interface (UI) Design {#user-interface-ui-design .unnumbered}
+
+1.  Login Page
+
+![](media/image13.png){width="4.152083333333334in"
+height="2.672222222222222in"}
+
+2.  Project Management
+
+![](media/image38.png){width="5.7659722222222225in"
+height="2.734027777777778in"}
+
+![](media/image8.png){width="6.499982502187226in"
+height="9.379804243219597in"}
+
+3.  Report Management
+
+![](media/image56.jpg){width="5.777267060367454in"
+height="2.7606036745406826in"}
+
+![](media/image57.png){width="5.770138888888889in"
+height="2.186111111111111in"}
+
+![](media/image49.png){width="5.770138888888889in"
+height="0.8479166666666667in"}
+
+![](media/image50.png){width="5.770138888888889in"
+height="2.1465277777777776in"}
+
+![](media/image47.png){width="5.770138888888889in"
+height="2.589583333333333in"}
+
+![](media/image55.png){width="5.770138888888889in"
+height="2.1638888888888888in"}
+
+![](media/image4.png){width="5.770138888888889in" height="1.78125in"}
+
+![](media/image53.png){width="5.770138888888889in"
+height="3.2631944444444443in"}
+
+![](media/image7.png){width="5.770138888888889in" height="2.6125in"}
+
+![](media/image16.png){width="5.770138888888889in"
+height="3.107638888888889in"}
+
+![](media/image6.png){width="5.770138888888889in"
+height="2.838888888888889in"}
+
+4.  Wish Management
+
+![](media/image34.jpg){width="5.872858705161855in"
+height="2.8858431758530183in"}
+
+![](media/image39.png){width="6.209057305336833in"
+height="7.273497375328084in"}
+
+5.  Solution Management
+
+![](media/image32.jpg){width="6.318238188976378in"
+height="2.9947965879265093in"}
+
+![](media/image18.png){width="6.396002843394576in"
+height="6.038707349081365in"}
+
+6.  Log Management
+
+![](media/image19.png){width="6.012259405074365in"
+height="2.7914413823272093in"}
+
+### System Architecture {#system-architecture .unnumbered}
+
+![](media/image54.jpg){width="3.78125in" height="4.447916666666667in"}
+
+The proposed INTPMIS is a web-based application which is built using
+Node.js, Vue.js, and MySQL. INTPMIS is designed for bridging the
+information and collaboration between different users. It interfaces
+with the online platform E&M InnoPortal to obtain relevant project
+
+data, such as the wish table, project table, and solution table, stored
+in INTPMIS MySQL database. Users are allowed to fill information and
+match records via the web user interface which is built by Vue.js. The
+key features of the system are record searching, record filtering, and
+report generation.
+
+**Selected Technical System Option**
+
+Node.js and MySQL are applied for the backend of the system when the
+Vue.js is the frontend of the system.
+
+Node.js is an open source, cross-platform runtime environment for
+developing server-side and networking applications. Node.js applications
+are written in JavaScript, and can be run within the Node.js runtime on
+OS X, Microsoft Windows, and Linux.
+
+Node.js also provides a rich library of various JavaScript modules which
+simplifies the development of web applications using Node.js to a great
+extent.
+
+MySQL is an open source relational database management system. It is
+based on the structure query language (SQL), which is used for adding,
+removing, and modifying information in the database.
+
+Vue.js is a library for building interactive web interfaces. The goal of
+Vue.js is to provide the benefits of reactive data binding and
+composable view components with an API that is as simple as possible.
+
+## Training manual and material {#training-manual-and-material .unnumbered}
+
+This System Manual intended to provide the necessary information to use
+the revamped Innoportal, which was launched on [25-8-2020]{.mark}.
+
+The manual assumed that the reader had a good knowledge of Vue, CSS,
+JAVASCRIPT and Node.js language.
+
+# System & Programming Manual and Workflow {#system-programming-manual-and-workflow}
+
+## User Login {#user-login .unnumbered}
+
+The system provide 2 ways to login.
+
+1\. SSO login by LDAP API
+
+> The SSO login was referred from other existing EMSD system. User will
+> get authentication AD from EMSD Active Directory. And the system will
+> call LDAP API to get users authentication code and information by the
+> staff ID.
+
+2\. By user name and password created by admin users.
+
+> If user do not have authentication AD, system will redirect users to
+> login page. Users can login to the system by input user name and
+> password.
+
+The following diagram showed the User Authentication workflow:
+
+![https://lh6.googleusercontent.com/9TfPlLvGCpzEvWOVjZxf_al9ZOBFXuNn5yLJvNKAhIV9hGUtyvYIkOngBP2PddJPtOWtYu1j4TsLBfKwrIYOvdU7UY91NJdhV2q5KKuFhs_IENnXGta-spzD4UpfQT4GfrZMvVvQ](media/image41.png){width="5.770138888888889in"
+height="4.076388888888889in"}
+
+## Database Structure {#database-structure .unnumbered}
+
+The system storing all data in eight table in a database. There are
+include archive, hierarchy, log, project, role, role_user_user_reles,
+solution, user and wish. All table attribute show as below:
+
+![](media/image48.png){width="5.770138888888889in"
+height="8.302281277340333in"}
+
+## System structure {#system-structure .unnumbered}
+
+<table>
+<colgroup>
 <col style="width: 25%" />
+<col style="width: 74%" />
 </colgroup>
+<thead>
+<tr class="header">
+<th>Landing</th>
+<th>Landing page calling SSO</th>
+</tr>
+<tr class="odd">
+<th>Login</th>
+<th>Manual Login page</th>
+</tr>
+<tr class="header">
+<th>System user management</th>
+<th><ol type="a">
+<li><blockquote>
+<p>Project Management</p>
+</blockquote>
+<ol type="i">
+<li><blockquote>
+<p>Project Create</p>
+</blockquote></li>
+<li><blockquote>
+<p>Projects Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Project Detail Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Projects View</p>
+</blockquote></li>
+<li><blockquote>
+<p>Project Locked Records</p>
+</blockquote></li>
+</ol></li>
+<li><blockquote>
+<p>Wish Management</p>
+</blockquote>
+<ol type="i">
+<li><blockquote>
+<p>Wish Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Wish Detail Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Wish View</p>
+</blockquote></li>
+<li><blockquote>
+<p>Wish Locked Record</p>
+</blockquote></li>
+</ol></li>
+<li><blockquote>
+<p>Solution Management</p>
+</blockquote>
+<ol type="i">
+<li><blockquote>
+<p>Solution Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Solution Detail Edit</p>
+</blockquote></li>
+<li><blockquote>
+<p>Solution View</p>
+</blockquote></li>
+<li><blockquote>
+<p>Solution Locked Record</p>
+</blockquote></li>
+</ol></li>
+<li><blockquote>
+<p>Report Management</p>
+</blockquote>
+<ol type="i">
+<li><blockquote>
+<p>Report Edit</p>
+</blockquote></li>
+</ol></li>
+</ol></th>
+</tr>
+<tr class="odd">
+<th>Report View</th>
+<th>Report browsing and printing</th>
+</tr>
+<tr class="header">
+<th>Log Management</th>
+<th>Log data</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td><blockquote>
-<p>1</p>
-</blockquote></td>
-<td>React (frontend)</td>
-<td><blockquote>
-<p>18.2.0</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2</p>
-</blockquote></td>
-<td>ExpressJS (backend)</td>
-<td><blockquote>
-<p>4.19.2</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>3</p>
-</blockquote></td>
-<td>NodeJS (runtime)</td>
-<td><blockquote>
-<p>20.11.1</p>
-</blockquote></td>
-</tr>
 </tbody>
 </table>
 
-1.  <span id="_heading=h.2w5ecyt" class="anchor"></span>**Security and
-    Backup**
+## Website Layout {#website-layout .unnumbered}
 
-    1.  <span id="_heading=h.1baon6m" class="anchor"></span> System
-        > Control
+![](media/image38.png){width="5.7659722222222225in"
+height="2.734027777777778in"}
 
-There will be no change in the existing authentication mechanisms. BD
-staff would still be authenticated by the OSDP before they can access
-the LSCP. If OSDP is unavailable in some situations such as maintenance,
-the LSCP would itself authenticate the users by the username and
-password + one-time password.
+After user login, the system would be divides in to three parts Header,
+Side Menu and Content Component.
 
-As for external users, they will still be required to be authenticated
-by OTP sent via email.
+## API from innoportal CMS {#api-from-innoportal-cms .unnumbered}
 
-Password complexity and policy will be updated to follow the latest IT
-Security Guidelines \[G3\].
+The system needed to integrate to the InnoPortal CMS by API provided by
+InnoPortal CMS side. They were list below:
 
-The LSCP grants functions access rights to users based on their post,
-and only “Responsible Officers” are allowed to maintain their own
-records.
+### Solution import {#solution-import .unnumbered}
 
-1.  <span id="_heading=h.3vac5uf" class="anchor"></span>Backup
+Post
+[[http://intpmis/api/vi/data/import-solution]{.underline}](http://intpmis/api/vi/data/import-solution)
 
-Production, UAT and DEV environments on WKGO and DR on AIA will be
-backuped by the backup servers (prd-scs-backup-01 and dr-scs-backup-01).
+Description : This api allow InnoPortal CMS call to import solution
 
-Daily VM image backup is carried out and stored in the backup storage,
-Weekly to tape and Daily Copy to AIA.  
-  
-Production and DR site included 8 backups, PROD VM Backup Job 3 Daily,
-PROD VM Backup to Tape Job 3 Weekly, PROD UAT VM Backup Job 1 Daily,
-PROD UAT VM Backup to Tape Job 1 Weekly, PROD DEV VM Backup Job 2 Daily,
-PROD DEV VM Backup to Tape Job 2 Weekly, DR VM Backup Job 4 Daily and
-PROD All jobs to DR Backup Copy Job 1 to AIA.
+| Key                        | Type    | Required |
+|----------------------------|---------|----------|
+| **soln_id**                |  string |  true    |
+| **cms_id**                 |  string |  false   |
+| **cms_expiry_date**        |  string |  false   |
+| **soln_title**             |  string |  false   |
+| **soln_cat_tech**          |  string |  false   |
+| **soln_cat_app**           |  string |  false   |
+| **innoportal_upload_date** |  string |  false   |
+| **int_soln_provider**      |  string |  false   |
+| **int_soln_provider_type** |  string |  false   |
+| **is_moc_partner**         |  string |  false   |
+| **moc_partner**            |  string |  false   |
+| **geog_location**          |  string |  false   |
+| **soln_contact_name**      |  string |  false   |
+| **soln_contact_title**     |  string |  false   |
+| **soln_contact_tel**       |  string |  false   |
+| **soln_contact_email**     |  string |  false   |
+| **soln_contact_address**   |  string |  false   |
+| **if_targetted_wish**      |  string |  false   |
+| **target_wish**            |  string |  false   |
+| **is_iirc**                |  string |  false   |
+| **iirc_bulletin_no**       |  string |  false   |
+| **iirc_review_date**       |  string |  false   |
+| **iirc_endorse_date**      |  string |  false   |
+| **is_intac**               |  string |  false   |
+| **intac_review_date**      |  string |  false   |
+| **intac_endorse_date**     |  string |  false   |
+| **tech_feasible**          |  string |  false   |
+| **remarks**                |  string |  false   |
+| **last_modified_by**       |  string |  false   |
+| **last_modified_at**       |  string |  false   |
+| **matched**                |  string |  false   |
+| **created_by**             |  string |  false   |
+| **created_at**             |  string |  false   |
 
-All instances including system files, database backup and data file will
-be backuped by backup jobs as VM Image managed by Veeam.
+Response code :
 
-Database servers (in both PROD and DR) will perform a local database
-backup and store in local harddisk. It will be backed up by the backup
-server and copied to AIA.
+| Response code | Description             |
+|---------------|-------------------------|
+| 200           | Import solution success |
+| 400           | Import solution fail    |
 
-Production environments on GCIS P1 will be backuped by backup services
-that are provided by GCIS with offsite copy and replicated to DR GCIS
-P2.
+### Wish import {#wish-import .unnumbered}
 
-Production database server on GCIS P1 will perform a local database
-backup and store in local harddisk. It will be backed up by the Veeam
-backup server (scspbk2) for additional copy.
+Post
+[[http://intpmis/api/vi/data/import-wish]{.underline}](http://intpmis/api/vi/data/import-wish)
 
-UAT and DEV environments on GCIS will be backup by backup services that
-are provided by GCIS.
+Description : This api allow InnoPortal CMS call to import wish
 
-1.  <span id="_heading=h.2afmg28" class="anchor"></span>Security
+| Key                              | Type    | Required |
+|----------------------------------|---------|----------|
+| wish_id                          |  string |  true    |
+| cms_id                           |  string |  false   |
+| cms_expiry_date                  |  string |  false   |
+| wish_title                       |  string |  false   |
+| wish_cat_smart                   |  string |  false   |
+| wish_cat_tech                    |  string |  false   |
+| wish_cat_app                     |  string |  false   |
+| innoportal_upload_date           |  string |  false   |
+| type_of_organization             |  string |  false   |
+| wish_client_dept                 |  string |  false   |
+| proposing_emsd_arm               |  string |  false   |
+| proposing_emsd_branch            |  string |  false   |
+| proposing_emsd_div               |  string |  false   |
+| proposing_emsd_sub_div           |  string |  false   |
+| support_emsd_div                 |  string |  false   |
+| wish_emsd_contact_name_eng       |  string |  false   |
+| wish_emsd_contact_name_chi       |  string |  false   |
+| wish_emsd_contact_post_short     |  string |  false   |
+| wish_emsd_contact_post_eng       |  string |  false   |
+| wish_emsd_contact_post_chi       |  string |  false   |
+| wish_emsd_contact_email          |  string |  false   |
+| wish_emsd_contact_tel            |  string |  false   |
+| is_innoteam                      |  string |  false   |
+| innoteam_round                   |  string |  false   |
+| int_challenge_no                 |  string |  false   |
+| int_challenge_title              |  string |  false   |
+| is_iirc                          |  string |  false   |
+| iirc_bulletin_no                 |  string |  false   |
+| iirc_review_date                 |  string |  false   |
+| iirc_endorse_date                |  string |  false   |
+| is_intac                         |  string |  false   |
+| iirc_deadline                    |  string |  false   |
+| iirc_soln                        |  string |  false   |
+| intac_review_date                |  string |  false   |
+| intac_endorse_date               |  string |  false   |
+| active_for_proposal              |  string |  false   |
+| remarks                          |  string |  false   |
+| last_modified_by                 |  string |  false   |
+| last_modified_at                 |  string |  false   |
+| matched                          |  string |  false   |
+| created_by                       |  string |  false   |
+| created_at                       |  string |  false   |
+| wish_emsd_contact_tel_2          |  string |  false   |
+| wish_emsd_contact_post_title_eng |  string |  false   |
+| wish_emsd_contact_post_title_chi |  string |  false   |
 
-The system conforms to security policy, guideline and regulation set out
-by the Buildings Department and DPO.
+Response code :
 
-### 8.3.1 Data Transmission Security
+| Response code | Description         |
+|---------------|---------------------|
+| 200           | Import wish success |
+| 400           | Import wish fail    |
 
-Data of the LSCP is classified to the “Restricted” level. Data
-transmission over the network will be encrypted by HTTPS over TLS. In
-order to enable TLS on the web servers of the LSCP, certificates will be
-applied, OGCIO’s Intranet Server Certificate Certification Authority
-(ISCCA) certificate will be apply for securing servers, applications,
-and communications within BD internal network (intranet)., Public SSL
-certificates, from HK post are used on public-facing servers and
-websites, intended to be trusted by the general public over Internet.
-Self-generated cert is used to secure the availability group which
-contains 2 production databases. And iAM Smart cert are configured in
-LSCP backend application in order to work with iAM Smart Mobile App.
-
-### 8.3.2 Data Storage and Auditing Security
-
-Data of the LSCP in production environment is stored in SAN storage. On
-the other hand, data storage in DR environment is stored in local server
-storage, Access and audit controls to this folder or drive are strictly
-controlled. Both environments facilitated with RAID (Redundant Array of
-Inexpensive Disks or Redundant Array of Independent Disks) mirroring
-data storage technology and all data are encrypted, OS secured by RAID 1
-while data secured by ADAPT and Raid 6. In terms of fault tolerance,
-ADAPT (Autonomic Distributed Allocation Protection Technology) and Raid
-6 withstands the failure of 2 hard disks. Moreover, all data facilitated
-with audit trail, records add/ change/ delete actions reposted in
-database for tracking who/ when/ what data being amended.
-
-### 8.3.3 System Security
-
-Regular service pack and patch updates are performed on operating system
-and software installed in servers and user workstations in order to fix
-the known security issues.
-
-All servers in both the production and DR environment will be installed
-with Antivirus clients and managed by a virtualised Antivirus Management
-server installed at Trust zone. The server will download the latest
-virus signatures from the antivirus software provider (Symantec) and
-update all client servers during non-peak hours. Protection policy, such
-as scanning schedule, will be enforced by the BD’s antivirus management
-server too.
-
-The external users will be responsible for the security protection on
-their computers. Their computers will have personal firewall enabled,
-the latest security patches applied, and anti-virus protection and
-malicious code detection installed.
-
-### 8.3.4 Physical Security
-
-Servers and equipment of the development/testing, production and DR
-environments are located in the server rooms, which the server rooms
-setup compliant with the section 8 of IT Security Guidelines \[G3\] and
-section 5.8 of Data Centre Site Preparation Guidelines \[G36\] where
-applicable.
-
-### 8.3.5 Password and Group Control
-
-The LSCP is protected by password control, BD user is able to login via
-DP of the Buildings Department and Internet, if login via Internet, it
-requires to submit password plus a one- time password by Authenticator,
-otherwise only one password requires. Public user can login via Internet
-and iAM Smart app, login via Internet requires password plus a one-time
-password by email, login via iAM Smart app requires no password.
-
-User are limited to access specific function, field, case and
-administrative authority by assignment of user group to user account.
-
-### 8.3.6 Control Procedure of Application User Account and Production Support Account
-
-If user is new to the LSCP, user is required to register. For certain
-role, such as head of stream, user is required to provide their
-Registered Professionals or Contractors registration number. And all
-public user is required to provide HKID and check versus our database.
-
-For external users, the LSCP implemented One-Time-Password token as
-secure login approach so that they can access the LSCP from their
-working locations for submission and retrieval of assignment details,
-and inspection results.
-
-All information submitted by low level TCP staff will be vetted by Head
-of stream staff before saving as finalized records on the system.
-
-To deliver on-going production support or change request, Application
-Maintenance Team may require to access the production servers for cause
-investigation, system/ application log collection or change request
-deployment. The Application Maintenance Team should seek the System
-Maintenance Committee’s approval by email. With the proof of
-authorization, ITU can help to login the servers, after that the
-Application Maintenance Team operates on the servers under the ITU’s
-monitoring. In case, the information/ operation can only be accessed/
-executed under particular system account, the Application Maintenance
-Team should ask system account holder or designated person (Business
-Coordination Team member) to logon for his action.
-
-1.  <span id="_heading=h.3mzq4wv" class="anchor"></span>Change Control
-
-During the SI&I stage, program source of the LSCP is maintained by the
-Application Maintenance Team with aid of GIT repository with version
-control, any updating on the program source is recorded for tracking of
-program changes. GIT will be continue using in the change control
-solution for the SM&S stage. For detail procedure, please refer to COPM.
-
-1.  Disaster Recovery
-
-**GCIS**
-
-<u>Automatic Failover</u>:
-
-If GCIS Prod 1 goes down, the GCIS Prod 2 disaster recovery (DR)
-environment will be automatically activated by the VM Site Recovery
-Manager. After a brief delay, users will be directed to the temporary
-domain (www2) to continue their usage seamlessly
-
-<u>Virtual Machine Backups:</u>
-
-The virtual machines of GCIS Prod 1 will undergo daily overnight
-backups, with each backup retained for 30 days.
-
-<u>Daily Database Backup:</u>
-
-A cron job is scheduled to export the GCIS Prod 1 database backup to the
-backup server every day at 22:00.
-
-**BDSCS External (On-Prem):**
-
-<u>Load Balancing with NGINX:</u>
-
-A NGINX Reverse Proxy/Load Balancer (running on ESXi) distributes
-traffic across two servers. In case one server becomes unavailable,
-traffic will automatically be redirected to the other server.
-
-<u>Scheduled Database Backup:</u>
-
-A cron job runs daily at 18:30 to export the database.
-
-<u>Backup Transfer:</u>
-
-At 19:00, the VM service will send the exported database backup to the
-production backup server.
-
-<u>VM Replication to DR Environment:</u>
-
-All production virtual machines will be replicated to the disaster
-recovery (DR) environment using the VEEAM architecture, ensuring
-continuity in the event of a failure
-
-1.  <span id="_heading=h.haapch" class="anchor"></span>Database Backup
-    Strategy
-
-### 8.6.1 SQL Database Backup
-
-Beside DB server VM backup which is mentioned by section 8.2 and section
-8.3, database full export backup will be carried out as well. This type
-of backup contains full database export database objects including
-schemas, table structures, packages, stored procedures and data at 18:45
-daily.
-
-The daily full export backup is done on DB servers (uat-db-01,
-prd-db-01, prd-db-02, dr-db-01), data stored on the DB servers’
-directory: D:\backup\\
-
-### 8.6.2 Recovery
-
-The table below shows the impact, system recovery and the expected
-duration before the BDSCS is resumed to normal operation when various
-system failures occur.
+## INTPMIS Report {#intpmis-report .unnumbered}
 
 <table>
 <colgroup>
-<col style="width: 5%" />
-<col style="width: 31%" />
-<col style="width: 26%" />
-<col style="width: 20%" />
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">View Report</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image56.jpg"
+style="width:4.15208in;height:1.98403in" /></th>
+<th><p>1. Click “View” under “Report Managment”</p>
+<p>2. Scroll down to view more reports</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Print Report</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image45.png"
+style="width:4.15208in;height:2.86389in" /></th>
+<th><p>1. Select the period of the report</p>
+<p>2. Select the other day for the report</p>
+<p>3. Click “Confirm” button</p>
+<p>4. The report is shown</p>
+<p>5. Click “Print” to print all report</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+The system containing seven report, the report has different aspect to
+analysis and show result of pass of the project, wish and solution.
+
+### Trend of I&T Wishes, Solutions, and Matched Trial Projects Report {#trend-of-it-wishes-solutions-and-matched-trial-projects-report .unnumbered}
+
+This report showed all number of the wishes, solution and match report
+in a month, user can swich the bar of top to control system month for
+view.
+
+![](media/image57.png){width="5.770138888888889in"
+height="2.186111111111111in"}
+
+### Summary of I&T Wishes Report {#summary-of-it-wishes-report .unnumbered}
+
+This Report showed number of the wish belong to a division, other type
+means the wishes are create form the other department out of EMSD.
+
+![](media/image49.png){width="5.770138888888889in"
+height="0.8479166666666667in"}
+
+![](media/image50.png){width="5.770138888888889in"
+height="2.1465277777777776in"}
+
+### Distribution of I&T Solutions by Technology Report {#distribution-of-it-solutions-by-technology-report .unnumbered}
+
+This report grouped and counted number of all technology would be used
+in the solution
+
+![](media/image47.png){width="5.770138888888889in"
+height="2.589583333333333in"}
+
+![](media/image55.png){width="5.770138888888889in"
+height="2.1638888888888888in"}
+
+### Cash flow for Matched Trial Projects on E&M InnoPortal Report {#cash-flow-for-matched-trial-projects-on-em-innoportal-report .unnumbered}
+
+This report would be show all division which total cash flow of match
+projects in a year.
+
+![](media/image4.png){width="5.770138888888889in" height="1.78125in"}
+
+### Statistics on I&T Projects Report {#statistics-on-it-projects-report .unnumbered}
+
+This report grouped all division and counted the project of the
+division. Also, the project would be divides status of compute or
+in-progress. There have two buttons of the report, Show All and Filter 0
+items button.
+
+Clicked Filter 0 items button, the system only show the division which
+contain a project.
+
+![](media/image53.png){width="5.770138888888889in"
+height="3.2631944444444443in"}
+
+Clicked Show All button, the system would display all the division which
+contain a project.
+
+![](media/image7.png){width="5.770138888888889in" height="2.6125in"}
+
+### Statistics Technology on I&T Projects Report {#statistics-technology-on-it-projects-report .unnumbered}
+
+This report would be counted and calculated the percentage of
+technologies used in the projects.
+
+![](media/image16.png){width="5.770138888888889in"
+height="3.107638888888889in"}
+
+### Expenditure on I&T Projects Report {#expenditure-on-it-projects-report .unnumbered}
+
+This report would be summed the actual expenditure and project
+expenditure of the projects in the year. Also, it would display
+expenditure of a division.
+
+![](media/image6.png){width="5.770138888888889in"
+height="2.838888888888889in"}
+
+# Users Procedures and Operation Manual
+
+## Login to INTPMIS {#login-to-intpmis .unnumbered}
+
+<table>
+<colgroup>
+<col style="width: 78%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">SSO login</th>
+</tr>
+<tr class="odd">
+<th colspan="2"><p>User gets an authentication ID from EMSD Active
+Directory. Then the system will call LDAP API to get users
+authentication code and information by the staff ID. </p>
+<p>If login is successful, the landing page will be shown.</p>
+<p>Otherwise, the user name login page will be shown.</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">User name login</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image13.png"
+style="width:4.15208in;height:2.67222in" /></th>
+<th><p>1. Open a browser (Internet Explorer/ Chrome)</p>
+<p>2. Go to http://intpmis/#/login</p>
+<p>3. Input email address and password </p>
+<p>4. click "Sign In" button</p></th>
+</tr>
+<tr class="header">
+<th><img src="media/image30.png"
+style="width:4.15208in;height:2.03194in" /></th>
+<th><p>Case 1: Login successfully</p>
+<p>The page is navigated to the landing page</p></th>
+</tr>
+<tr class="odd">
+<th><img src="media/image9.png"
+style="width:5.77014in;height:2.84861in" /></th>
+<th><p>Case 2: Login fail</p>
+<p>The error prompt is shown.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+## Project {#project .unnumbered}
+
+### Browsing Project List {#browsing-project-list .unnumbered}
+
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">View Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image2.jpg"
+style="width:4.15208in;height:2.07222in" /></th>
+<th><p>1. Click “View” under “Project Management”</p>
+<p>2. Scoll the bottom bar to the right to show the project
+detail</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Filter Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image10.png"
+style="width:4.15208in;height:1.92778in" /></th>
+<th><p>1. Input filter value</p>
+<p>2. Select display number of record per page</p>
+<p>3. The results are shown</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Search Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image25.png"
+style="width:4.15208in;height:2.42431in" /></th>
+<th><p>1. Click search section</p>
+<p>2. Select search criteria</p>
+<p>3. Select values of criteria</p>
+<p>4. Click “Search” button</p>
+<p>5. The results are shown</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Export Project</th>
+</tr>
+<tr class="odd">
+<th><p><img src="media/image20.png"
+style="width:4.15208in;height:2.32014in" /></p>
+<p><img src="media/image5.png"
+style="width:4.15208in;height:0.99167in" /></p></th>
+<th><p>There are two options for exporting project</p>
+<p>1. Export searched records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export Records” button </p>
+</blockquote></li>
+</ul>
+<p>2. Export all records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></li>
+</ul>
+<p>The exported results will be stored in a csv file</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+### Create a Project {#create-a-project .unnumbered}
+
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Create Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image22.jpg"
+style="width:4.15208in;height:1.87986in" /></th>
+<th>Click “Create” under “Project Management"</th>
+</tr>
+<tr class="header">
+<th><img src="media/image8.png"
+style="width:4.15208in;height:5.99167in" /></th>
+<th><p>1. Fill the required fields</p>
+<p>2. Click “Submit” button</p></th>
+</tr>
+<tr class="odd">
+<th><img src="media/image14.png"
+style="width:4.15208in;height:1.24028in" /></th>
+<th><p>Case 1: Input field is not filled</p>
+<p>The error message is shown under the field</p></th>
+</tr>
+<tr class="header">
+<th><p><img src="media/image3.png"
+style="width:4.15208in;height:2.03194in" /></p>
+<p><img src="media/image1.png"
+style="width:4.15208in;height:1.99167in" /></p></th>
+<th><p>Case 2: Value is not valid</p>
+<p>The error message is shown</p></th>
+</tr>
+<tr class="odd">
+<th><p><img src="media/image12.png"
+style="width:4.15208in;height:1.74375in" /></p>
+<p><img src="media/image2.jpg"
+style="width:4.15208in;height:2.07222in" /></p></th>
+<th><p>Case 3: Project is created successfully</p>
+<p>A successful message is shown with the project number</p>
+<p>1. Click “X” to redirect to project view page</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+### Edit a Project {#edit-a-project .unnumbered}
+
+<table>
+<colgroup>
+<col style="width: 84%" />
 <col style="width: 15%" />
 </colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Edit Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image29.jpg"
+style="width:4.15208in;height:2.04792in" /></th>
+<th><p>1. Click “Edit” under “Project Management”</p>
+<p>2. Click edit icon to edit the project</p></th>
+</tr>
+<tr class="header">
+<th><img src="media/image26.png"
+style="width:3.18555in;height:5.63194in" /></th>
+<th><p>To edit information of the project, users can:</p>
+<p>1. select completed</p>
+<p>2. input values</p>
+<p>3. empty input</p>
+<p>Then click “Save All” button</p></th>
+</tr>
+<tr class="odd">
+<th><img src="media/image24.png"
+style="width:5.77014in;height:0.82562in" /></th>
+<th><p>Case 1: Invalid input</p>
+<p>The alert message is shown</p></th>
+</tr>
+<tr class="header">
+<th><img src="media/image23.png"
+style="width:5.77014in;height:0.86028in" /></th>
+<th><p>Case 2: Save successfully</p>
+<p>The successful message is shown</p></th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td>#</td>
-<td>Failure Scenario</td>
-<td>Impact</td>
-<td>System Recovery</td>
-<td>Total down time</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>System (hardware) failure of the primary database server</td>
-<td><p>Production BDSCS services not available;</p>
-<p>All BDSCS users cannot use BDSCS</p></td>
-<td>Pilot BDSCS needs to be setup using standby DB</td>
-<td>~1 hour</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>Electricity shortage on primary site</td>
-<td><p>Production BDSCS services not available;</p>
-<p>All BDSCS users cannot use BDSCS</p></td>
-<td>BDSCSneeds to be setup using DR site</td>
-<td>~half day</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>System failure of either one of the App servers on primary site</td>
-<td>According to the number of concurrent user, the performance may be
-degraded.</td>
-<td>No effect on system availability</td>
-<td>N/A</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>System failure of ALL App servers on primary site</td>
-<td><p>Production BDSCS Web services not available;</p>
-<p>ALL BDSCS Web users cannot use BDSCS</p></td>
-<td>BDSCS needs to be restored using App servers VM image backup</td>
-<td>~half day</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>Database connection failure since SQL database instance down</td>
-<td><p>BDSCS services not available;</p>
-<p>ALL BDSCS users cannot use BDSCS</p></td>
-<td>Restart SQL database instance</td>
-<td>~1 hour</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Primary database crushed</td>
-<td>No impact as it will failover to the secondary database</td>
-<td>BDSCS needs to be setup using secondary DB</td>
-<td>~1 hour</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>System failure (hardware failure) on one of the VM servers</td>
-<td>No impact as all VM Server is formed in cluster. If one have failure
-hardware failover will proceed automatically.</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
 </tbody>
 </table>
 
-### 8.6.3 Backup Schedule 
+## Wish List {#wish-list .unnumbered}
 
-|                                         |                                                 |
-|-------------------------------------|-----------------------------------|
-| Name                                    | Schedule                                        |
-| PROD VM Backup Job 3 Daily              | Daily 12:01 AM (Full)                           |
-| PROD VM Backup to Tape Job 3 Weekly     | Every Sunday 09:00 AM (Full)                    |
-| PROD UAT VM Backup Job 1 Daily          | Daily 08:00 PM (Full)                           |
-| PROD UAT VM Backup to Tape Job 1 Weekly | Every Sunday 06:00 AM (Full)                    |
-| PROD DEV VM Backup Job 2 Daily          | Daily 10:00 PM (Full)                           |
-| PROD DEV VM Backup to Tape Job 2 Weekly | Every Sunday 03:00 AM (Full)                    |
-| PROD All jobs to DR Backup Copy Job 1   | After every PROD VM Backup Job 1, 2 and 3 Daily |
-| DR VM Backup Job 4 Daily                | Daily 08:00 PM (Full)                           |
+### Browsing Wish List {#browsing-wish-list .unnumbered}
 
-# 9. Database Administration
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">View Wish</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image34.jpg"
+style="width:4.15208in;height:2.04028in" /></th>
+<th><p>1. Click “View” under “Wish Management”</p>
+<p>2. Scroll the bottom bar to right to view detail of the wish</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Search Wish</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image33.png"
+style="width:4.15208in;height:2.32014in" /></th>
+<th><p>1. Click search section</p>
+<p>2. Select search criteria</p>
+<p>3. Select values of criteria</p>
+<p>4. Click “Search” button</p>
+<p>5. The results are shown</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Filter Wish</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image31.png"
+style="width:4.15208in;height:1.82431in" /></th>
+<th><p>1. Input filter value</p>
+<p>2. Select display number of record per page</p>
+<p>3. The results are shown</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-1.  <span id="_heading=h.upglbi" class="anchor"></span>Clean Database
-    Transaction Logs
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Export Wish</th>
+</tr>
+<tr class="odd">
+<th><p><img src="media/image28.png"
+style="width:4.15208in;height:2.32014in" /></p>
+<p><img src="media/image51.png"
+style="width:4.15208in;height:1.72014in" /></p></th>
+<th><p>There are two options for exporting wish</p>
+<p>1. Export searched records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export Records” button </p>
+</blockquote></li>
+</ul>
+<p>2. Export all records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></li>
+</ul>
+<p>The exported results will be stored in a csv file</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-To clean up transaction log to reclaim space:
+### Edit a Wish {#edit-a-wish .unnumbered}
 
-1.  Login to the database server, launch the SQL Server Management
-    > Studio (SSMS) software
+<table>
+<colgroup>
+<col style="width: 86%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Edit Wish</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image39.png"
+style="width:4.15208in;height:4.86389in" /></th>
+<th><p>1. Input value to edit</p>
+<p>2. Click “Save All” button</p></th>
+</tr>
+<tr class="header">
+<th><img src="media/image24.png"
+style="width:5.77014in;height:0.89545in" /></th>
+<th><p>Case 1: Invalid input</p>
+<p>An alert message is shown</p></th>
+</tr>
+<tr class="odd">
+<th><img src="media/image11.png"
+style="width:5.59167in;height:0.84886in" /></th>
+<th><p>Case 2: Wish is edited successfully</p>
+<p>An alert message is shown</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-2.  In SSMS, login the database with account having sysadmin role
+## Solution List {#solution-list .unnumbered}
 
-3.  On the left pane, find and right click the database “bd_scs”, then
-    > select “Properties”
+### Browsing Solution List {#browsing-solution-list .unnumbered}
 
-<img src="media/image13.png" style="width:4.63859in;height:5.67074in" />
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">View Solution</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image32.jpg"
+style="width:4.15208in;height:1.96806in" /></th>
+<th><p>1. Click “View” under “Solution  Management”</p>
+<p>2. Scroll the bottom bar to right to view detail of the
+solution</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Search Solution</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image44.png"
+style="width:4.15208in;height:2.41597in" /></th>
+<th><p>1. Click search section</p>
+<p>2. Select search criteria</p>
+<p>3. Select values of criteria</p>
+<p>4. Click “Search” button</p>
+<p>5. The results are shown</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Filter Solution</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image15.png"
+style="width:4.15208in;height:1.82431in" /></th>
+<th><p>1. Input filter value</p>
+<p>2. Select display number of record per page</p>
+<p>3. The results are shown</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-1.  Under “Options”, change “Recovery model” to “Simple”
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Export Solution</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image36.png"
+style="width:4.15208in;height:2.41597in" /></th>
+<th><p>There are two options for exporting solution</p>
+<p>1. Export searched records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export Records” button </p>
+</blockquote></li>
+</ul>
+<p>2. Export all records</p>
+<ul>
+<li><blockquote>
+<p>Click “Export All Records” button</p>
+</blockquote></li>
+</ul>
+<p>The exported results will be stored in a csv file</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-<img src="media/image14.png" style="width:6.27585in;height:2.17739in" />
+### Edit a Solution {#edit-a-solution .unnumbered}
 
-1.  Click “Ok” to apply the change
+<table>
+<colgroup>
+<col style="width: 86%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Edit Solution</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image18.png"
+style="width:4.15208in;height:3.92014in" /></th>
+<th><p>1. Input value to edit</p>
+<p>2. Click “Save All” button</p></th>
+</tr>
+<tr class="header">
+<th><img src="media/image24.png"
+style="width:5.77014in;height:0.70938in" /></th>
+<th><p>Case 1: Invalid input</p>
+<p>An alert message is shown</p></th>
+</tr>
+<tr class="odd">
+<th><img src="media/image27.png"
+style="width:5.75972in;height:0.84891in" /></th>
+<th><p>Case 2: Solution is edited successfully</p>
+<p>An alert message is shown</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-2.  Right click “bd_scs” again, under “Tasks” → “Shrink”, select “Files”
+# Administrator Procedures and Operation Manual
 
-<img src="media/image15.png" style="width:6.62605in;height:2.09722in" />
+## Project {#project-1 .unnumbered}
 
-1.  Under “File type”, select “Log”
+### Edit a Project {#edit-a-project-1 .unnumbered}
 
-<img src="media/image16.png" style="width:6.62605in;height:2.51389in" />
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">Edit Project</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image21.png"
+style="width:4.15208in;height:6.51181in" /></th>
+<th><p>** Admin (Role 6) allowed edit more different fields, such as
+Date of Uploading Interim Evaluation Report</p>
+<p>To edit information of the project, users can:</p>
+<p>1. select completed</p>
+<p>2. input values</p>
+<p>3. empty input</p>
+<p>Then click “Save All” button</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-1.  Under “Shrink action” select “Reorganize pages before releasing
-    > unused space”, then press “OK”.
+## Log List {#log-list .unnumbered}
 
-<img src="media/image17.png" style="width:6.62605in;height:3.06944in" />
+### Browsing Log List {#browsing-log-list .unnumbered}
 
-1.  After shrinking, right click the database “bd_scs”, then select
-    > “Properties”, under “Options”, change “Recovery model” back to
-    > “Full”
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">View and Export Log</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image19.png"
+style="width:4.15208in;height:1.92778in" /></th>
+<th><p>1. Select tag type of log</p>
+<p>2. Log records are shown in list</p>
+<p>3. Click “+” button to view log detail</p>
+<p>4. Click “Export Records” button to export records to a csv
+file</p></th>
+</tr>
+<tr class="header">
+<th colspan="2">Cancel Reminder</th>
+</tr>
+<tr class="odd">
+<th><img src="media/image17.png"
+style="width:4.15208in;height:1.92778in" /></th>
+<th><p>There are two options to cancel reminder(s):</p>
+<p>1. Click checked button to cancel the reminder of a record</p>
+<p>2. Select multiple records and click batch checked to cancel reminder
+of selected records</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-<img src="media/image18.png" style="width:6.62605in;height:2.16667in" />
+Training courses and user experience session
 
-1.  <span id="_heading=h.3ep43zb" class="anchor"></span>Database Backup
+Program Manual including workflow manual
 
-While there is scheduled database full backup daily, additional backup
-can be done by following step:
+System manual
 
-1.  In SSMS, right click database “bd_scs”, select “Tasks” → “Back Up…”
+User procedures manual
 
-<img src="media/image19.png" style="width:6.62605in;height:2.56944in" />
+Search Function
 
-1.  Under “Destination”, click “Remove” to remove existing backup
-    > destination, then click “Add…”.
+![](media/image43.png){width="5.823846237970254in"
+height="1.7508781714785653in"}
 
-<img src="media/image20.png" style="width:6.62605in;height:1.90278in" />
+User can search project, wish or solution by used search function. The
+function allow user to select one or more special search criteria which
+are fields of the object. After user select criteria, that would be
+display in below and have all value possible in that fields allow user
+to search. When user complete the form of search. By click search
+button, the system would display all object which are satisfy the
+criteria in below table.
 
-1.  Click the three dots button next to “File name” input field, then
-    > pick the directory and input the file name of the backup, the file
-    > name should end with “.bak”, then press “OK”.
+Search Function (report)
 
-> <img src="media/image21.png" style="width:4.60417in;height:4.03125in" />
+![](media/image37.png){width="5.756944444444445in"
+height="1.2020833333333334in"}
 
-1.  The backup destination is selected, now click “OK” to start the
-    > backup.
+The search function in the report, system allow user selecting a month,
+then start date and end date would be auto assign in to filed. After
+click Confirm button, system would be display report to below, that data
+a during in the selected month.
 
-<img src="media/image22.png" style="width:6.62605in;height:3.41667in" />
+Export Function
 
-1.  The backup is completed with the “.bak” file picked in step 3 as the
-    > result.
+![](media/image40.png){width="5.75in" height="2.96875in"}
 
-<!-- -->
+![](media/image46.png){width="5.768055555555556in"
+height="0.8791666666666667in"}
 
-1.  <span id="bookmark=id.1hmsyys" class="anchor"></span>System
-    Constraints and Limitations
+User can export all records after search in the table by clicked Export
+Records Button. The system would save all records to a csv file to user
+local file.
 
--   URL path length limit 250
+Printing Report Function
 
--   ~, #, %, & , \*, {, }, \\ :, \<, \>, ?, /, \|, “ special character
-    is not allowed for files/folder
+![](media/image52.png){width="5.768055555555556in"
+height="3.792361111111111in"}
 
-Reference:
-[<u>https://docs.microsoft.com/en-us/sharepoint/install/software-boundaries-and-limits-0</u>](https://docs.microsoft.com/en-us/sharepoint/install/software-boundaries-and-limits-0)
+System allow user to printing all report by click the Print button,
+which in the right side of report search function. Then the system would
+be pop up a preview page for user adjust the printing setting.
 
-# 10. Log Management
+Create Project
 
-1\. Following activities shall include in the log:
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fields</th>
+<th>Input Type</th>
+<th>Require</th>
+<th>Remark</th>
+</tr>
+<tr class="odd">
+<th>Matched Through</th>
+<th>select</th>
+<th>yes</th>
+<th>If user select Non-E&amp;M InnoPortal, Wish No, Solution No, Same
+Person with Wish Proposer (Y/N) would be hidden</th>
+</tr>
+<tr class="header">
+<th>Project Title</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Project Image</th>
+<th>file</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Wish No</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Solution No</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Same Person with Wish Proposer (Y/N)</th>
+<th>select</th>
+<th>no</th>
+<th>If click yes in Same Person with wish proposer (Y/N) field, all
+field in Subject Officer and InnoTeam Related Information auto assign
+that wish value, exclude InnoTeam (Y/N) field</th>
+</tr>
+<tr class="odd">
+<th>Client Department</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>EMSTF/ RS</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Branch</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Division</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Sub-Division</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Subject Officer (Eng)</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Subject Officer (Chi)</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Post</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Full Post (Eng)</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Full Post (Chi)</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Email</th>
+<th>email</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Tel</th>
+<th>number (max 20 digital)</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Tel 2</th>
+<th>number (max 20 digital)</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>InnoTeam (Y/N)</th>
+<th>select</th>
+<th>yes</th>
+<th>If Click No in InnoTeam (Y/N) field, Round of InnoTeam, InnoTeam
+Number , InnoTeam Proposal Title would hidden</th>
+</tr>
+<tr class="odd">
+<th>Round of InnoTeam</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>InnoTeam Number</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>InnoTeam Proposal Title</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Testing Grounds</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Trial Scale</th>
+<th>text</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Percentage of completion</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Monetary benefits</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Project Status</th>
+<th>select</th>
+<th>yes</th>
+<th>If select Completed of Project Status field, Annual Return,
+Investment per year, System Life Expectancy fields will be required for
+create new project</th>
+</tr>
+<tr class="odd">
+<th>Annual Return</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Investment per year</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>System Life Expectancy</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Remarks</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>PO issued (Y/NA)</th>
+<th>select</th>
+<th>yes</th>
+<th>User Max can input three PO No. for a project</th>
+</tr>
+<tr class="header">
+<th>PO No.</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>PO No. 2</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>PO No. 3</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Project Sum(HK$)</th>
+<th>number</th>
+<th>yes</th>
+<th>The Project Sum would be same with sum all expenditure</th>
+</tr>
+<tr class="header">
+<th>Anticipated/ Actual Contract Start Date</th>
+<th>date</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Anticipated/ Actual Contract Completion Date (mm/yyyy)</th>
+<th>date</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Actual Expenditure in FY17/18</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Actual Expenditure in FY18/19</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Actual Expenditure in FY19/20</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Actual Expenditure in FY20/21</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Projected Expenditure in FY20/21</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Projected Expenditure in FY21/22</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Projected Expenditure in FY22/23</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Expenditure in Remaining FY(s)</th>
+<th>number</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Funding Type</th>
+<th>select</th>
+<th>yes</th>
+<th>If the Funding Type is Cost Center, user new to input cost center
+number.<br />
+If the Funding Type is Other, user need to special input the funding
+type.<br />
+If the Funding Type is ITF, ITF Scheme Applied, ITF Scheme Status, ITF
+Project Ref, Year of Support need to input for new project.</th>
+</tr>
+<tr class="odd">
+<th>ITF Scheme Applied</th>
+<th>select</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>ITF Scheme Status</th>
+<th>select</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>ITF Project Ref</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Year of Support</th>
+<th>select</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Submission of Interim Report</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Submission of MnV Report</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Interim Report</th>
+<th>file</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>MnV Report</th>
+<th>file</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Date of uploading Interim Report</th>
+<th>date</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Date of uploading MnV Report</th>
+<th>date</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Upload of Interim Report</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Upload of MnV Report</th>
+<th>select</th>
+<th>yes</th>
+<th></th>
+</tr>
+<tr class="odd">
+<th>Funding Type (Others)</th>
+<th>text</th>
+<th>no</th>
+<th></th>
+</tr>
+<tr class="header">
+<th>Cost Center Number</th>
+<th>number</th>
+<th>no</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-> − Attempts for log-in
->
-> − Unauthorised update/access
->
-> − Failed attempts for privileges elevation
->
-> − Attempts for password changes
->
-> − Access attempts to critical files (e.g., software configuration
-> files, password and key files, etc.)
->
-> − Actions taken by privileged users
->
-> − Use of privileged rights such as addition and deletion of user
-> accounts
->
-> − Security related system failures and alerts
->
-> − Changes to user access rights
->
-> − Failed access attempts to systems and files identified as critical
-> to the system
->
-> − Computer services such as file copying or searching
->
-> − Modification to audit policy
->
-> − Activation and de-activation of protection systems, such as
-> anti-malware systems and intrusion detection systems
+Administrator Procedures Manual
 
-2\. Logs shall be retained for **180 days** and centralised and managed
-by Syslog server. Unauthorised access is restricted.
+Logging
 
-3\. Logs will be reviewed regularly.
+![](media/image35.png){width="5.759722222222222in"
+height="1.679861111111111in"}
 
-4\. Logs shall not be used to profile the activity of a particular user
-unless it relates to a necessary audit activity supported by a
-Directorate rank officer.
+In the logging page. User can check all log record of report, wish or
+solution. They can select tag he/she wanted to check. After a user
+create or edit an object, the system would be created log record. In the
+table all log record would be have a reminder field to remind user that
+record is new or need to be check. If the user is wants to cancel the
+remind of a record, he/she can click Checked button in that record, then
+the system would hidden the reminder of that record. User can also
+select more than one log records and click Batch Checked button to
+cancel a list reminder of the records.
 
-> \<\<\< End of document \>\>\>
+![](media/image42.png){width="5.75625in"
+height="1.8520833333333333in"}User can click + button to checking the
+detail of the log record. That record would drow down a view to present
+log detail. Different type of the log would be display different layout
+of the detail.
