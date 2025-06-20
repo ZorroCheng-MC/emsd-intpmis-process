@@ -1,16 +1,16 @@
-![EMSDlogo](media/image1.jpg)
+![{{DEPARTMENT_LOGO}}](media/image1.jpg)
 
 # SYSTEM INSTALLATION PLAN
 
 **FOR**
 
-**I&T PROJECT MANAGEMENT INFORMATION SYSTEM**
+**{{PROJECT_FULL_NAME}}**
 
-**INTPMIS**
+**{{PROJECT_SHORT_NAME}}**
 
 **OF**
 
-**ELECTRICAL AND MECHANICAL SERVICES DEPARTMENT**
+**{{DEPARTMENT_NAME}}**
 
 **Version: 0.1**
 
@@ -23,7 +23,7 @@ The contents of this document remain the property of and may not be reproduced i
 | Distribution |                                     |
 |-------------|-------------------------------------|
 | Copy No.    | Holder                              |
-| 1           | Electrical and Mechanical Services Department (EMSD) |
+| 1           | {{DEPARTMENT_NAME}} |
 | 2           | Master Concept (Hong Kong) Limited (MC) |
 
 | Amendment History |                       |                |            |           |           |
@@ -64,7 +64,7 @@ The System Installation plan describes the procedure and schedule for deploying 
 
 ## Network Diagram
 
-Below is a logical network diagram in 1/F West Kowloon Government Office for production and UAT site.
+Below is a logical network diagram in {{LOCATION}} for production and UAT site.
 
 [DIAGRAM HERE]
 
@@ -86,9 +86,9 @@ List of machines and virtual machines:
 
 | Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP |
 |---------------------------|---------------------------|---------|-----|
-| prd-intpmis-db-01 | prd-intpmis-mysql-01 | MySQL Database Server | 192.168.10.50 |
-| prd-intpmis-app-01 | prd-intpmis-node-01 | Node.js Backend Server | 192.168.10.51 |
-| prd-intpmis-web-01 | prd-intpmis-vue-01 | Vue.js Frontend Server | 192.168.10.52 |
+| {{PRD_DB_PHYSICAL}} | {{PRD_DB_VIRTUAL}} | {{DATABASE_TYPE}} Database Server | {{PRD_DB_IP}} |
+| {{PRD_APP_PHYSICAL}} | {{PRD_APP_VIRTUAL}} | {{BACKEND_TYPE}} Backend Server | {{PRD_APP_IP}} |
+| {{PRD_WEB_PHYSICAL}} | {{PRD_WEB_VIRTUAL}} | {{FRONTEND_TYPE}} Frontend Server | {{PRD_WEB_IP}} |
 
 
 DR environment:
@@ -97,27 +97,27 @@ List of machines and virtual machines:
 
 | Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP |
 |---------------------------|---------------------------|---------|-----|
-| dr-intpmis-db-01 | dr-intpmis-mysql-01 | MySQL Database Server | 192.168.20.50 |
-| dr-intpmis-app-01 | dr-intpmis-node-01 | Node.js Backend Server | 192.168.20.51 |
-| dr-intpmis-web-01 | dr-intpmis-vue-01 | Vue.js Frontend Server | 192.168.20.52 |
+| {{DR_DB_PHYSICAL}} | {{DR_DB_VIRTUAL}} | {{DATABASE_TYPE}} Database Server | {{DR_DB_IP}} |
+| {{DR_APP_PHYSICAL}} | {{DR_APP_VIRTUAL}} | {{BACKEND_TYPE}} Backend Server | {{DR_APP_IP}} |
+| {{DR_WEB_PHYSICAL}} | {{DR_WEB_VIRTUAL}} | {{FRONTEND_TYPE}} Frontend Server | {{DR_WEB_IP}} |
 
 
 ## Software Specification
 
 | Machine | Hostname | Software Requirement |
 |---------|----------|---------------------|
-| MySQL Database Server | prd-intpmis-mysql-01 | MySQL 8.0.35 |
-| Node.js Backend Server | prd-intpmis-node-01 | Node.js 20.11.1, PM2 5.3.0 |
-| Vue.js Frontend Server | prd-intpmis-vue-01 | Nginx 1.24.0, Vue.js 3.4.0 |
+| {{DATABASE_TYPE}} Database Server | {{PRD_DB_VIRTUAL}} | {{DATABASE_TYPE}} {{DATABASE_VERSION}} |
+| {{BACKEND_TYPE}} Backend Server | {{PRD_APP_VIRTUAL}} | {{BACKEND_TYPE}} {{BACKEND_VERSION}}, {{PROCESS_MANAGER}} {{PM_VERSION}} |
+| {{FRONTEND_TYPE}} Frontend Server | {{PRD_WEB_VIRTUAL}} | {{WEB_SERVER}} {{WEB_SERVER_VERSION}}, {{FRONTEND_TYPE}} {{FRONTEND_VERSION}} |
 
 
 Development Frameworks:
 
 | Framework | Version |
 |-----------|---------|
-| Vue.js (frontend) | 3.4.0 |
-| Node.js (backend) | 20.11.1 |
-| MySQL (database) | 8.0.35 |
+| {{FRONTEND_TYPE}} (frontend) | {{FRONTEND_VERSION}} |
+| {{BACKEND_TYPE}} (backend) | {{BACKEND_VERSION}} |
+| {{DATABASE_TYPE}} (database) | {{DATABASE_VERSION}} |
 
 
 # Application Deployment Procedure for Production
@@ -126,23 +126,23 @@ Development Frameworks:
 
 To install database server, follow these steps:
 
-1. Remote login to prd-intpmis-mysql-01
-2. Install MySQL Server 8.0.35
-3. Install MySQL Workbench 8.0.35
-4. Configure MySQL Server with:
-   - Authentication: mysql_native_password
-   - Enable networking on port 3306
-   - Configure firewall to allow MySQL port (default 3306)
+1. Remote login to {{PRD_DB_VIRTUAL}}
+2. Install {{DATABASE_TYPE}} Server {{DATABASE_VERSION}}
+3. Install {{DATABASE_TYPE}} {{DATABASE_MANAGEMENT_TOOL}} {{DB_TOOL_VERSION}}
+4. Configure {{DATABASE_TYPE}} Server with:
+   - Authentication: {{DB_AUTH_METHOD}}
+   - Enable networking on port {{DB_PORT}}
+   - Configure firewall to allow {{DATABASE_TYPE}} port (default {{DB_PORT}})
    - Set up SSL/TLS encryption
-5. Create database INTPMIS_DB with:
-   - Character set: utf8mb4
-   - Collation: utf8mb4_unicode_ci
-   - Initial size: 50GB
+5. Create database {{DATABASE_NAME}} with:
+   - Character set: {{DB_CHARSET}}
+   - Collation: {{DB_COLLATION}}
+   - Initial size: {{DB_INITIAL_SIZE}}
 6. Configure database backup schedule:
-   - Daily incremental backup at 02:00
-   - Weekly full backup on Sunday at 01:00
+   - Daily incremental backup at {{DAILY_BACKUP_TIME}}
+   - Weekly full backup on {{WEEKLY_BACKUP_DAY}} at {{WEEKLY_BACKUP_TIME}}
 7. Configure database maintenance plan:
-   - Weekly table optimization
+   - Weekly {{DB_MAINTENANCE_TASK}}
    - Daily statistics update
 8. Configure database monitoring and alerts:
    - Space usage alerts at 85% and 95%
@@ -151,79 +151,79 @@ To install database server, follow these steps:
 
 ## Backend Servers
 
-1. Remote login into prd-intpmis-node-01
+1. Remote login into {{PRD_APP_VIRTUAL}}
 2. Install prerequisites:
-   - Ubuntu Server 22.04 LTS updates
-   - Node.js 20.11.1
-   - PM2 5.3.0 (Process Manager)
+   - {{OS_TYPE}} updates
+   - {{BACKEND_TYPE}} {{BACKEND_VERSION}}
+   - {{PROCESS_MANAGER}} {{PM_VERSION}} (Process Manager)
    - Git for deployment
 3. Install backend application:
-   - Deploy Node.js API application files to /opt/intpmis/api
-   - Configure PM2 ecosystem file:
+   - Deploy {{BACKEND_TYPE}} API application files to {{BACKEND_DEPLOY_PATH}}
+   - Configure {{PROCESS_MANAGER}} ecosystem file:
      - Environment: production
-     - Instances: cluster mode (4 instances)
-     - Memory limit: 512MB per instance
+     - Instances: cluster mode ({{CLUSTER_INSTANCES}} instances)
+     - Memory limit: {{MEMORY_LIMIT}} per instance
 4. Configure application settings:
-   - Update config/production.json with production values
-   - Configure MySQL connection strings
-   - Set up logging paths (/var/log/intpmis)
+   - Update {{CONFIG_FILE}} with production values
+   - Configure {{DATABASE_TYPE}} connection strings
+   - Set up logging paths ({{LOG_PATH}})
 5. Configure system services:
-   - Set up PM2 as system service
+   - Set up {{PROCESS_MANAGER}} as system service
    - Configure log rotation
    - Set up service recovery options
 6. Configure SSL certificates:
    - Install SSL certificate for HTTPS
-   - Configure reverse proxy (Nginx)
-7. Configure Nginx reverse proxy:
+   - Configure reverse proxy ({{WEB_SERVER}})
+7. Configure {{WEB_SERVER}} reverse proxy:
    - Create virtual host configuration
    - Configure load balancing
    - Set up compression and caching rules
 
 ## Frontend Servers
 
-1. Remote login into prd-intpmis-vue-01
+1. Remote login into {{PRD_WEB_VIRTUAL}}
 2. Install prerequisites:
-   - Ubuntu Server 22.04 LTS updates
-   - Nginx 1.24.0
-   - Node.js 20.11.1 (for build process)
+   - {{OS_TYPE}} updates
+   - {{WEB_SERVER}} {{WEB_SERVER_VERSION}}
+   - {{BACKEND_TYPE}} {{BACKEND_VERSION}} (for build process)
    - Git for deployment
 3. Install frontend application:
-   - Deploy Vue.js application files to /var/www/intpmis-web
+   - Deploy {{FRONTEND_TYPE}} application files to {{FRONTEND_DEPLOY_PATH}}
    - Build production assets using npm run build
    - Configure static file serving
    - Set up compression for static files
-4. Configure Nginx:
+4. Configure {{WEB_SERVER}}:
    - Create virtual host configuration
    - Configure SSL certificates
    - Set up URL rewrite rules for SPA routing
    - Configure CORS headers
    - Set up gzip compression
 5. Configure monitoring:
-   - Set up Nginx access and error logging
+   - Set up {{WEB_SERVER}} access and error logging
    - Configure health check endpoints
    - Set up performance monitoring
    - Configure log rotation
 
 ### sFTP Server Setup
 
-1. Install OpenSSH server in Ubuntu Server:
-   - Update package repository: sudo apt update
-   - Install OpenSSH server: sudo apt install openssh-server
-   - Enable SSH service: sudo systemctl enable ssh
+1. Install OpenSSH server in {{OS_TYPE}}:
+   - Update package repository: {{PACKAGE_UPDATE_CMD}}
+   - Install OpenSSH server: {{SSH_INSTALL_CMD}}
+   - Enable SSH service: {{SSH_ENABLE_CMD}}
 2. Configure OpenSSH server:
-   - Create dedicated service account for INTPMIS
+   - Create dedicated service account for {{PROJECT_SHORT_NAME}}
    - Configure authentication methods in /etc/ssh/sshd_config
-   - Set up SFTP chroot directory: /var/sftp/intpmis
+   - Set up SFTP chroot directory: {{SFTP_ROOT_DIR}}
 3. Configure firewall:
-   - Allow inbound port 22 (SSH): sudo ufw allow 22
+   - Allow inbound port 22 (SSH): {{FIREWALL_SSH_CMD}}
    - Restrict access to specific IP ranges
    - Configure fail2ban for intrusion prevention
 4. Set up user accounts:
-   - Create SFTP users for INTPMIS file transfers
+   - Create SFTP users for {{PROJECT_SHORT_NAME}} file transfers
    - Configure user permissions and directory access
    - Set up public key authentication
 5. Configure logging and monitoring:
-   - Enable detailed SSH logging in /var/log/auth.log
+   - Enable detailed SSH logging in {{SSH_LOG_PATH}}
    - Set up log rotation with logrotate
    - Configure alerts for failed login attempts
 
@@ -247,7 +247,7 @@ The following table summarises the testing schedule:
 | Final Check Production Web Server |  |  |  |  |
 | Final Check Production Database Server |  |  |  |  |
 | Final Check DR Web & Database server |  |  |  |  |
-| Final Check IIS & Framework |  |  |  |  |
+| Final Check {{WEB_SERVER}} & Framework |  |  |  |  |
 
 ## System Installation Result
 
@@ -267,6 +267,6 @@ The following table summarises the actual system installation schedule:
 | Final Check Production Web Server |  |  |  |  |  |
 | Final Check Production Database Server |  |  |  |  |  |
 | Final Check DR Web & DB server |  |  |  |  |  |
-| Final Check IIS & Framework |  |  |  |  |  |
+| Final Check {{WEB_SERVER}} & Framework |  |  |  |  |  |
 
 <<End of Document>>
