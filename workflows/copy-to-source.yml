@@ -1,0 +1,64 @@
+name: Copy Generated Files to Source
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'generated/computer_operation_procedures_manual.md'
+      - 'generated/data_catalogue.md'
+      - 'generated/program_spec.md'
+      - 'generated/program_manual.md'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+  
+jobs:
+  copy_files:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Copy specific files from generated to source
+        run: |
+          # Create source directory if it doesn't exist
+          mkdir -p source
+          
+          # List all files in generated directory for debugging
+          echo "Files in generated directory:"
+          ls -la generated/
+          
+          # Check if each file exists in generated folder and copy to source
+          for file in computer_operation_procedures_manual.md data_catalogue.md program_spec.md program_manual.md; do
+            if [ -f "generated/$file" ]; then
+              echo "Copying $file to source folder"
+              cp "generated/$file" "source/$file"
+            else
+              echo "Warning: $file not found in generated folder"
+            fi
+          done
+          
+          # List all files in source directory after copying
+          echo "Files in source directory after copying:"
+          ls -la source/
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Force add all files in source directory (including new files)
+          git add -f source/
+          
+          # Check if there are any changes to commit
+          if git status | grep -q "Changes to be committed"; then
+            git commit -m "Automatically copy files from generated to source"
+            git push
+          else
+            echo "No changes to commit"
+          fi
