@@ -1,26 +1,28 @@
-![Logo](media/image1.jpg)
+![EMSDlogo](media/image1.jpg)
 
 # SYSTEM INSTALLATION PLAN
 
 **FOR**
 
-**[PROJECT_NAME]**
+**I&T PROJECT MANAGEMENT INFORMATION SYSTEM**
+
+**INTPMIS**
 
 **OF**
 
-**[DEPARTMENT_NAME]**
+**ELECTRICAL AND MECHANICAL SERVICES DEPARTMENT**
 
-**Version: [VERSION]**
+**Version: 0.1**
 
-**[DATE]**
+**Jan 2025**
 
 ? The Government of the Hong Kong Special Administrative Region
 
 The contents of this document remain the property of and may not be reproduced in whole or in part without the express permission of the Government of the HKSAR.
 
 | Distribution | N/A |
-|-------------|-------------------------------------| N/A |---|---| N/A | Copy No.    | Holder                              | N/A |---|---| N/A | 1           | [DEPARTMENT_NAME]                   | N/A |---|---| N/A | 2           | Master Concept (Hong Kong) Limited (MC) | N/A |---|---| N/A | Amendment History | N/A |                | N/A |           | N/A |
-|------------------|------------------------|----------------|------------|-----------|-----------| N/A |---|---|---|---|---|---| N/A | Change Number    | Revision Description   | Pages Affected | Revision / | Date      | Approval  | N/A |                  | N/A | on Respective  | Version    | N/A | Reference | N/A |                  | N/A | Version        | Number     | N/A |           | N/A |---|---|---|---|---|---| N/A | 1                | 1st draft             | All            | [VERSION]  | [DATE]    | N/A |
+|-------------|-------------------------------------| N/A |---|---| N/A | Copy No.    | Holder                              | N/A |---|---| N/A | 1           | Electrical and Mechanical Services Department (EMSD) | N/A |---|---| N/A | 2           | Master Concept (Hong Kong) Limited (MC) | N/A |---|---| N/A | Amendment History | N/A |                | N/A |           | N/A |
+|------------------|------------------------|----------------|------------|-----------|-----------| N/A |---|---|---|---|---|---| N/A | Change Number    | Revision Description   | Pages Affected | Revision / | Date      | Approval  | N/A |                  | N/A | on Respective  | Version    | N/A | Reference | N/A |                  | N/A | Version        | Number     | N/A |           | N/A |---|---|---|---|---|---| N/A | 1                | 1st draft             | All            | 0.1        | 16/01/225 | N/A |
 |---|---|---|---|---|---|
 # TABLE OF CONTENTS
 
@@ -43,7 +45,7 @@ The contents of this document remain the property of and may not be reproduced i
 
 # Introduction
 
-The System Installation plan describes the procedure and schedule for deploying the application in the production environment, including the main components of the system:
+The System Installation plan describes the procedure and schedule for deploying the application in the production environment, including 3 parts of the system:
 
 - Database Server
 - Backend Server
@@ -53,11 +55,19 @@ The System Installation plan describes the procedure and schedule for deploying 
 
 ## Network Diagram
 
-[NETWORK_DIAGRAM_DESCRIPTION]
+Below is a logical network diagram in 1/F West Kowloon Government Office for production and UAT site.
 
 [DIAGRAM HERE]
 
-[NETWORK_ARCHITECTURE_DESCRIPTION]
+The network will be separated into three zones: DMZ, trusted zone, and storage network.
+
+A two-tier firewall setup will be used to form the trusted zone and DMZ. Incoming network traffic to the system must go through the DMZ before entering the trusted zone.
+
+To utilize hardware resources more effectively, servers listed in section [1.3.3], except the backup server, will be set up in the form of virtual machines (VM) and consolidated into DMZ VM host servers and trusted zone VM host servers for each physical site. Two VM host servers will be built in each zone for the purpose of high availability.
+
+Similarly, storage needed by all servers will be consolidated and provided by SAN storage. A dedicated network will be set up and interconnected with the VM host servers. The backup server will also exist in this storage-dedicated network to carry out backup tasks of VM host servers in DMZ and trusted zone.
+
+The diagram below illustrates the physical setup.
 
 ## Hardware Specification
 
@@ -65,35 +75,124 @@ Production and UAT environment:
 
 List of machines and virtual machines:
 
-| Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP | N/A |---------------------------|---------------------------|---------|-----| N/A |---|---|---|---| N/A | [HARDWARE_SPECIFICATIONS] | [HARDWARE_SPECIFICATIONS] | [HARDWARE_SPECIFICATIONS] | [HARDWARE_SPECIFICATIONS] | N/A |---|---|---|---|
+| Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP | N/A |---------------------------|---------------------------|---------|-----| N/A |---|---|---|---| N/A | prd-intpmis-db-01 | prd-intpmis-mysql-01 | MySQL Database Server | 192.168.10.50 | N/A |---|---|---|---| N/A | prd-intpmis-app-01 | prd-intpmis-node-01 | Node.js Backend Server | 192.168.10.51 | N/A |---|---|---|---| N/A | prd-intpmis-web-01 | prd-intpmis-vue-01 | Vue.js Frontend Server | 192.168.10.52 | N/A |---|---|---|---|
 DR environment:
 
 List of machines and virtual machines:
 
-| Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP | N/A |---------------------------|---------------------------|---------|-----| N/A |---|---|---|---| N/A | [DR_HARDWARE_SPECIFICATIONS] | [DR_HARDWARE_SPECIFICATIONS] | [DR_HARDWARE_SPECIFICATIONS] | [DR_HARDWARE_SPECIFICATIONS] | N/A |---|---|---|---|
+| Hostname (Physical Machine) | Hostname (Virtual Machine) | Purpose | IP | N/A |---------------------------|---------------------------|---------|-----| N/A |---|---|---|---| N/A | dr-intpmis-db-01 | dr-intpmis-mysql-01 | MySQL Database Server | 192.168.20.50 | N/A |---|---|---|---| N/A | dr-intpmis-app-01 | dr-intpmis-node-01 | Node.js Backend Server | 192.168.20.51 | N/A |---|---|---|---| N/A | dr-intpmis-web-01 | dr-intpmis-vue-01 | Vue.js Frontend Server | 192.168.20.52 | N/A |---|---|---|---|
 ## Software Specification
 
-| Machine | Hostname | Software Requirement | N/A |---------|----------|---------------------| N/A |---|---|---| N/A | [SOFTWARE_SPECIFICATIONS] | [SOFTWARE_SPECIFICATIONS] | [SOFTWARE_SPECIFICATIONS] | N/A |---|---|---|
+| Machine | Hostname | Software Requirement | N/A |---------|----------|---------------------| N/A |---|---|---| N/A | MySQL Database Server | prd-intpmis-mysql-01 | MySQL 8.0.35 | N/A |---|---|---| N/A | Node.js Backend Server | prd-intpmis-node-01 | Node.js 20.11.1, PM2 5.3.0 | N/A |---|---|---| N/A | Vue.js Frontend Server | prd-intpmis-vue-01 | Nginx 1.24.0, Vue.js 3.4.0 | N/A |---|---|---|
 Development Frameworks:
 
-| Framework | Version | N/A |-----------|---------| N/A |---|---| N/A | [FRAMEWORK_SPECIFICATIONS] | [FRAMEWORK_SPECIFICATIONS] | N/A |---|---|
+| Framework | Version | N/A |-----------|---------| N/A |---|---| N/A | Vue.js (frontend) | 3.4.0 | N/A |---|---| N/A | Node.js (backend) | 20.11.1 | N/A |---|---| N/A | MySQL (database) | 8.0.35 | N/A |---|---|
 # Application Deployment Procedure for Production
 
 ## Database Server
 
-[DATABASE_INSTALLATION_PROCEDURES]
+To install database server, follow these steps:
+
+1. Remote login to prd-intpmis-mysql-01
+2. Install MySQL Server 8.0.35
+3. Install MySQL Workbench 8.0.35
+4. Configure MySQL Server with:
+   - Authentication: mysql_native_password
+   - Enable networking on port 3306
+   - Configure firewall to allow MySQL port (default 3306)
+   - Set up SSL/TLS encryption
+5. Create database INTPMIS_DB with:
+   - Character set: utf8mb4
+   - Collation: utf8mb4_unicode_ci
+   - Initial size: 50GB
+6. Configure database backup schedule:
+   - Daily incremental backup at 02:00
+   - Weekly full backup on Sunday at 01:00
+7. Configure database maintenance plan:
+   - Weekly table optimization
+   - Daily statistics update
+8. Configure database monitoring and alerts:
+   - Space usage alerts at 85% and 95%
+   - Performance alerts for slow queries
+   - Connection limit alerts
 
 ## Backend Servers
 
-[BACKEND_INSTALLATION_PROCEDURES]
+1. Remote login into prd-intpmis-node-01
+2. Install prerequisites:
+   - Ubuntu Server 22.04 LTS updates
+   - Node.js 20.11.1
+   - PM2 5.3.0 (Process Manager)
+   - Git for deployment
+3. Install backend application:
+   - Deploy Node.js API application files to /opt/intpmis/api
+   - Configure PM2 ecosystem file:
+     - Environment: production
+     - Instances: cluster mode (4 instances)
+     - Memory limit: 512MB per instance
+4. Configure application settings:
+   - Update config/production.json with production values
+   - Configure MySQL connection strings
+   - Set up logging paths (/var/log/intpmis)
+5. Configure system services:
+   - Set up PM2 as system service
+   - Configure log rotation
+   - Set up service recovery options
+6. Configure SSL certificates:
+   - Install SSL certificate for HTTPS
+   - Configure reverse proxy (Nginx)
+7. Configure Nginx reverse proxy:
+   - Create virtual host configuration
+   - Configure load balancing
+   - Set up compression and caching rules
 
 ## Frontend Servers
 
-[FRONTEND_INSTALLATION_PROCEDURES]
+1. Remote login into prd-intpmis-vue-01
+2. Install prerequisites:
+   - Ubuntu Server 22.04 LTS updates
+   - Nginx 1.24.0
+   - Node.js 20.11.1 (for build process)
+   - Git for deployment
+3. Install frontend application:
+   - Deploy Vue.js application files to /var/www/intpmis-web
+   - Build production assets using npm run build
+   - Configure static file serving
+   - Set up compression for static files
+4. Configure Nginx:
+   - Create virtual host configuration
+   - Configure SSL certificates
+   - Set up URL rewrite rules for SPA routing
+   - Configure CORS headers
+   - Set up gzip compression
+5. Configure monitoring:
+   - Set up Nginx access and error logging
+   - Configure health check endpoints
+   - Set up performance monitoring
+   - Configure log rotation
 
 ### sFTP Server Setup
 
-[SFTP_INSTALLATION_PROCEDURES]
+1. Install OpenSSH server in Ubuntu Server:
+   - Update package repository: sudo apt update
+   - Install OpenSSH server: sudo apt install openssh-server
+   - Enable SSH service: sudo systemctl enable ssh
+2. Configure OpenSSH server:
+   - Create dedicated service account for INTPMIS
+   - Configure authentication methods in /etc/ssh/sshd_config
+   - Set up SFTP chroot directory: /var/sftp/intpmis
+3. Configure firewall:
+   - Allow inbound port 22 (SSH): sudo ufw allow 22
+   - Restrict access to specific IP ranges
+   - Configure fail2ban for intrusion prevention
+4. Set up user accounts:
+   - Create SFTP users for INTPMIS file transfers
+   - Configure user permissions and directory access
+   - Set up public key authentication
+5. Configure logging and monitoring:
+   - Enable detailed SSH logging in /var/log/auth.log
+   - Set up log rotation with logrotate
+   - Configure alerts for failed login attempts
 
 # System Installation Schedule and Result
 
@@ -101,191 +200,265 @@ Development Frameworks:
 
 The following table summarises the testing schedule:
 
-| Pre-Requisite | Start Date | End Date | Start time | End Time | N/A |---------------|------------|----------|------------|----------| N/A |---|---|---|---|---| N/A | [INSTALLATION_SCHEDULE] | [INSTALLATION_SCHEDULE] | [INSTALLATION_SCHEDULE] | [INSTALLATION_SCHEDULE] | [INSTALLATION_SCHEDULE] | N/A |---|---|---|---|---|
+| Pre-Requisite | Start Date | End Date | Start time | End Time | N/A |---------------|------------|----------|------------|----------| N/A |---|---|---|---|---| N/A | Database Server Installation (Production and DR) | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Backend Server Installation (Production and DR) | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Frontend Server Installation (Production and DR) | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Functionality test (VM & Networking) | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Database setup | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Deployment for 1st version of frontend server | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Deployment for 1st version of backend server | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Application Health Check | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Deployment for Latest Mobile Application | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Final Check Production Web Server | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Final Check Production Database Server | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Final Check DR Web & Database server | N/A |  | N/A |  | N/A |---|---|---|---|---| N/A | Final Check IIS & Framework | N/A |  | N/A |  | N/A |---|---|---|---|---|
 ## System Installation Result
 
 The following table summarises the actual system installation schedule:
 
-| Pre-Requisite | Actual Start Date | Actual End Date | Actual Start time | Actual End Time | Status/Result | N/A |---------------|-------------------|-----------------|-------------------|-----------------|---------------| N/A |---|---|---|---|---|---| N/A | [INSTALLATION_RESULTS] | [INSTALLATION_RESULTS] | [INSTALLATION_RESULTS] | [INSTALLATION_RESULTS] | [INSTALLATION_RESULTS] | [INSTALLATION_RESULTS] | N/A |---|---|---|---|---|---|
+| Pre-Requisite | Actual Start Date | Actual End Date | Actual Start time | Actual End Time | Status/Result | N/A |---------------|-------------------|-----------------|-------------------|-----------------|---------------| N/A |---|---|---|---|---|---| N/A | Database Server Installation (Production, UAT and DR) | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Backend Server Installation (Production, UAT and DR) | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Frontend Server Installation (Production, UAT and DR) | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Functionality test (VM & Networking) | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Database setup | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Deployment for 1st version of frontend server | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Deployment for 1st version of backend server | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Application Health Check | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Deployment for Latest Mobile Application | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Final Check Production Web Server | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Final Check Production Database Server | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Final Check DR Web & DB server | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---| N/A | Final Check IIS & Framework | N/A |  | N/A |  | N/A |
+|---|---|---|---|---|---|
 <<End of Document>>
 ```
 
+Okay, I've analyzed the provided text and extracted the key information. Here's a summary of the INTPMIS system, focusing on its reports, user procedures, administrator procedures, and the User Requirement Specification:
 
-# System Installation Plan for I&T Project Management Information System (INTPMIS)
+**I. System Overview**
 
-This document outlines the system installation plan for the I&T Project Management Information System (INTPMIS) developed for the Electrical and Mechanical Services Department (EMSD). It consolidates information from the provided User Requirement Specification (URS) and other documentation to provide a comprehensive overview of the installation process, requirements, and procedures.
+The INTPMIS (I&T Project Management Information System) is designed for the Electrical and Mechanical Services Department (EMSD). It aims to improve upon the current system by providing:
 
-## 1. System Overview
+*   An easy-to-use web portal.
+*   Enhanced data management.
+*   Data analysis and reporting capabilities.
+*   Workflow automation.
 
-The INTPMIS is a web-based system designed to manage I&T projects, wishes, and solutions within EMSD. It aims to address the limitations of the current system by providing enhanced features for data management, analysis, and workflow. Key features include:
+**II. Reports**
 
-*   **User-friendly Web Portal:** An intuitive web interface for administrators and users to access and modify database entries.
-*   **Data Management:** Storage of I&T project information (including E&M InnoPortal projects), wishes, and solutions in a MySQL database. Support for various data types, including text, dates, reports, and attachments (PDF, Microsoft Word, JPEG, PNG, etc.).
-*   **Data Analysis:** Generation of reports and statistics to track I&T development trends. Customizable reports with filtering and sorting capabilities. Data export to Excel format.
-*   **Workflow Automation:** Automated data retrieval from different tables during project creation, reducing manual data entry and improving accuracy.
-*   **Logging:** Comprehensive logging of user actions and system events for auditing and troubleshooting.
+The system includes seven different reports to analyze and show the results of projects, wishes, and solutions. These reports include:
 
-## 2. System Requirements
+1.  **Trend of I&T Wishes, Solutions, and Matched Trial Projects Report:** Shows the number of wishes, solutions, and matched projects over time (monthly).
+2.  **Summary of I&T Wishes Report:** Shows the number of wishes belonging to different divisions.
+3.  **Distribution of I&T Solutions by Technology Report:** Groups and counts the number of solutions using specific technologies.
+4.  **Cash flow for Matched Trial Projects on E&M InnoPortal Report:** Shows the total cash flow of matched projects for each division in a year.
+5.  **Statistics on I&T Projects Report:** Counts projects by division and status (complete or in-progress).  Includes "Show All" and "Filter 0 items" buttons.
+6.  **Statistics Technology on I&T Projects Report:** Counts and calculates the percentage of technologies used in projects.
+7.  **Expenditure on I&T Projects Report:** Sums the actual and projected expenditures of projects in a year, broken down by division.
+
+**Common Report Features:**
+
+*   **Search Function:** Allows users to filter reports by month.
+*   **Export Function:** Allows users to export all records after a search to a CSV file.
+*   **Printing Report Function:** Allows users to print all reports by clicking the "Print" button.
+
+**III. User Procedures**
+
+The user procedures cover the following areas:
+
+*   **Login:**
+    *   Supports SSO (Single Sign-On) via EMSD Active Directory.
+    *   Offers username/password login as an alternative.
+*   **Project Management:**
+    *   Browsing Project List: Includes viewing, filtering, searching, and exporting projects.
+    *   Creating a Project: Details the required fields and validation.
+    *   Editing a Project: Allows users to modify project information.
+*   **Wish List Management:**
+    *   Browsing Wish List: Includes viewing, searching, filtering, and exporting wishes.
+    *   Editing a Wish: Allows users to modify wish information.
+*   **Solution List Management:**
+    *   Browsing Solution List: Includes viewing, searching, filtering, and exporting solutions.
+    *   Editing a Solution: Allows users to modify solution information.
+
+**IV. Administrator Procedures**
+
+The administrator procedures cover:
+
+*   **Project Management:**
+    *   Editing a Project: Administrators have access to more fields than regular users.
+*   **Log List:**
+    *   Browsing Log List: Includes viewing, exporting, and canceling reminders related to log entries.
+
+**V. User Requirement Specification (URS)**
+
+The URS document outlines the user requirements for the INTPMIS system. Key aspects include:
+
+*   **Proposed System Overview:**  Details the goals of the new system.
+*   **Future Business Processes:** Lists the key business processes supported by the system (e.g., User Login, View Project List, Create Project).
+*   **UI & UX Design:** Provides mockups of key screens (Login, Project Management, Wish Management, Solution Management, Report Management, Log Management).
+*   **Functional Requirements:** Lists the functional requirements (REQ-SYS-XXX) with details on priority, description, frequency of use, acceptance criteria, and related business processes.  Examples include:
+    *   Login
+    *   Project List
+    *   Create a Project
+    *   View or Edit a Project
+    *   Wish List
+    *   View or Edit a Wish
+    *   Solution List
+    *   View and Edit a Solution
+    *   Report List
+    *   View Report
+    *   Log List
+    *   View Log List
+    *   Upload File
+*   **Non-Functional Requirements:** Lists the non-functional requirements (REQ-SR/UR/SCR-XXX) with details on priority and description.  Examples include:
+    *   Response Time
+    *   Service Time
+    *   Export
+    *   Scalability
+    *   System Performance
+    *   User Interface Requirement
+    *   Function Access Rights
+    *   Access to Data
+    *   System Backup
+
+**Key Takeaways:**
+
+*   INTPMIS is a comprehensive system designed to manage I&T projects, wishes, and solutions within EMSD.
+*   It provides robust reporting and analysis capabilities.
+*   User procedures are well-documented.
+*   The URS document provides a detailed specification of the system's requirements.
+
+Let me know if you'd like me to elaborate on any specific aspect of the system!
+
+
+# System Installation Plan
+
+This document outlines the system installation plan based on the provided requirements and specifications. It covers functional and technical requirements, focusing on system controls, backup and recovery, and disaster recovery.
+
+## 1. Introduction
+
+This plan details the steps required to successfully install and configure the system, ensuring it meets the defined requirements for data access, backup, recovery, and disaster recovery.
+
+## 2. Requirements Summary
+
+This section summarizes the key requirements driving the system installation.
 
 ### 2.1 Functional Requirements
 
-The system must fulfill the following functional requirements:
+*   **REQ-SCR-002: Access to Data:**  The system must allow for defining access rights for users to specific data, conditionally. It must also support access monitoring for selected data.
+*   **REQ-SCR-003: System Backup:** The system must meet general backup requirements, including data, system, and all audit logging information.
 
-*   **REQ-SYS-001: Login:** Secure user authentication via Windows Active Directory single sign-on. Support for existing user permission matrix mapping. Handling of "Acting" roles based on LDAP login details.
-*   **REQ-SYS-002: Project List:** Ability to search, sort, and filter projects. Export project list to CSV format. Configure filtering and sorting criteria. View and edit project details.
-*   **REQ-SYS-003: Create a Project:** Functionality to create new projects with required data fields.
-*   **REQ-SYS-004: View and Edit a Project:** Support read-only and edit modes based on user permissions and project stage.
-*   **REQ-SYS-005: Wish List:** Ability to search, sort, and filter wishes. Export wish list to CSV format. Configure filtering and sorting criteria. View and edit wish details.
-*   **REQ-SYS-006: View or Edit a Wish:** Support read-only and edit modes based on user permissions.
-*   **REQ-SYS-007: Solution List:** Ability to search, sort, and filter solutions. Export solution list to CSV format. Configure filtering and sorting criteria. View and edit solution details.
-*   **REQ-SYS-008: View and Edit a Solution:** Support read-only and edit modes based on user permissions.
-*   **REQ-SYS-009: Report List:** Ability to sort and filter reports. Export report list to CSV format. Configure filtering and sorting criteria.
-*   **REQ-SYS-010: View Report:** Support read-only mode for report viewing.
-*   **REQ-SYS-011: Log List:** Ability to sort and filter logs. Export log list to CSV format. Configure filtering and sorting criteria. View log details.
-*   **REQ-SYS-012: View Log List:** Support read-only mode for log viewing.
-*   **REQ-SYS-013: Upload Files:** Ability to upload files in various formats (PDF, JPEG, DOCX, XLS). Support file replacement and deletion.
+### 2.2 Technical Requirements
 
-### 2.2 Non-Functional Requirements
+*   **TR-SBR-001: Server House Keeping:** System logs must be archived to backup tape weekly.
+*   **TR-SBR-002: Backup, Recovery and System Archive:**
+    *   Provide daily backup.
+    *   Provide weekly system backup.
+    *   Provide 2 generations of system backup stored off-site.
+    *   Provide system activity logs and reports.
+*   **TR-DRR-001: System Disaster Recovery:**
+    *   Participate in disaster recovery activities and complete assigned tasks following the disaster recovery plan.
+    *   Coordinate with new system users to participate in disaster recovery activities.
+    *   Resume the entire system from the disaster recovery site to the normal production environment.
 
-The system must meet the following non-functional requirements:
+## 3. System Specification
 
-*   **REQ-SR-001: Response Time:** 95% of predefined queries should respond within 5 seconds.
-*   **REQ-SR-002: Service Time:** System availability from 08:00 to 20:00 daily (with potential for late-night access). Achieve 99.0% availability (unscheduled downtime not exceeding 7.2 minutes per day or 1.83 days per year).
-*   **REQ-SR-003: Export:** Ability to export data in easy-readable formats like Excel.
-*   **REQ-SR-004: Scalability:** Provide scalability options for future system expansion.
-*   **REQ-SR-005: System Performance:** Technically sound architecture to meet response time and performance levels.
-*   **REQ-UR-001: User Interface Requirement:** User-friendly interface consistent with web-based applications. Responsive web design for different screen sizes. Functionality in multiple browsers (Internet Explorer, Chrome).
-*   **REQ-SCR-001: Function Access Rights:** Define user access rights based on roles and user levels.
-*   **REQ-SCR-002: Access to Data:** Define access rights for users to access specific data, with conditional access and monitoring capabilities.
-*   **REQ-SCR-003: System Backup:** Meet general backup requirements for data, system, and audit logging information.
+The system provides the following functions, categorized as follows:
 
-### 2.3 Technical Requirements
+| Item | Category             | System Functions              | N/A |------|----------------------|-------------------------------| N/A |---|---|---| N/A | 1    | Information Viewing  | View Project List and Detail  | N/A |---|---|---| N/A | 2    | Content Management   | Create a Project              | N/A |---|---|---| N/A | 3    | Content Management   | Edit a Project                | N/A |---|---|---| N/A | 4    | Information Viewing  | Search Projects               | N/A |---|---|---| N/A | 5    | Information Viewing  | Filter Projects               | N/A |---|---|---| N/A | 6    | Workflow Application | Export Projects               | N/A |---|---|---| N/A | 7    | Information Viewing  | View Wish List and Detail     | N/A |---|---|---| N/A | 8    | Content Management   | Edit a Wish                   | N/A |---|---|---| N/A | 9    | Information Viewing  | Search Wishes                 | N/A |---|---|---| N/A | 10   | Information Viewing  | Filter Wishes                 | N/A |---|---|---| N/A | 11   | Workflow Application | Export Wishes                 | N/A |---|---|---| N/A | 12   | Information Viewing  | View Solution List and Detail | N/A |---|---|---| N/A | 13   | Content Management   | Edit a Solution               | N/A |---|---|---| N/A | 14   | Information Viewing  | Search Solutions              | N/A |---|---|---| N/A | 15   | Information Viewing  | Filter Solutions              | N/A |---|---|---| N/A | 16   | Workflow Application | Export Solutions              | N/A |---|---|---| N/A | 17   | Information Viewing  | View Report List and Detail   | N/A |---|---|---| N/A | 18   | Workflow Application | Export Report                 | N/A |---|---|---| N/A | 19   | Information Viewing  | View Log List and Detail      | N/A |---|---|---| N/A | 20   | Content Management   | Cancel Reminder for Log       | N/A |---|---|---|
+## 4. Installation Steps
 
-The system must adhere to the following technical requirements:
+This section outlines the high-level steps for installing the system.  Specific details for each step will be documented in separate, more detailed procedures.
 
-*   **TR-SBR-001: Server House Keeping:** Archive system logs to backup tape weekly.
-*   **TR-SBR-002: Backup, Recovery and System Archive:** Daily backup, weekly system backup, two generations of off-site system backup, system activity logs and reports.
-*   **TR-DRR-001: System Disaster Recovery:** Participate in disaster recovery activities, coordinate with users, and resume the system from the disaster recovery site.
+1.  **Environment Preparation:**
+    *   Provision necessary hardware and software infrastructure (servers, databases, operating systems, etc.).
+    *   Configure network connectivity.
+    *   Install and configure any prerequisite software.
+2.  **Software Installation:**
+    *   Install the system software components.
+    *   Configure the system based on the system specifications.
+3.  **Data Migration (if applicable):**
+    *   Migrate existing data to the new system.
+    *   Verify data integrity after migration.
+4.  **Access Control Configuration:**
+    *   Implement access control mechanisms based on REQ-SCR-002.
+    *   Define user roles and permissions.
+    *   Configure access monitoring.
+5.  **Backup and Recovery Configuration:**
+    *   Configure daily and weekly backups as per TR-SBR-002.
+    *   Configure off-site storage for backup generations.
+    *   Implement system activity logging and reporting.
+    *   Configure weekly system log archiving to backup tape as per TR-SBR-001.
+6.  **Disaster Recovery Setup:**
+    *   Establish a disaster recovery site.
+    *   Develop and document a disaster recovery plan.
+    *   Configure replication or other mechanisms for data and system recovery.
+7.  **Testing:**
+    *   Conduct thorough testing of all system functions.
+    *   Test access control mechanisms.
+    *   Perform backup and recovery testing.
+    *   Conduct disaster recovery drills.
+8.  **User Training:**
+    *   Provide training to users on the new system.
+    *   Include training on disaster recovery procedures.
+9.  **Go-Live:**
+    *   Deploy the system to the production environment.
+    *   Monitor system performance and stability.
+10. **Post-Installation Support:**
+    *   Provide ongoing support and maintenance.
+    *   Address any issues or bugs that arise.
 
-## 3. Installation Procedures
+## 5. Backup and Recovery Plan
 
-The installation process involves several key steps:
+This section details the backup and recovery procedures.
 
-1.  **Environment Setup:**
-    *   Install and configure the necessary operating system, web server, database server (MySQL), and other required software components.
-    *   Ensure the server meets the hardware requirements for the system.
-2.  **Database Setup:**
-    *   Create the MySQL database for INTPMIS.
-    *   Import the database schema and initial data.
-3.  **Application Deployment:**
-    *   Deploy the INTPMIS application files to the web server.
-    *   Configure the application to connect to the MySQL database.
-4.  **User Authentication Configuration:**
-    *   Configure single sign-on integration with Windows Active Directory.
-    *   Map existing user permissions to the INTPMIS roles.
-5.  **Data Migration:**
-    *   Migrate existing I&T project information from other systems and Excel tables to the INTPMIS database.
-6.  **Testing:**
-    *   Conduct thorough testing of all system functionalities, including login, project management, wish management, solution management, reporting, and logging.
-    *   Verify that the system meets the performance and security requirements.
-7.  **User Training:**
-    *   Provide training courses and user experience sessions for EMSD staff on how to use the INTPMIS.
-    *   Develop user manuals, including workflow manuals and user procedures manuals.
-8.  **Deployment:**
-    *   Deploy the INTPMIS to the production environment.
-    *   Monitor the system performance and stability after deployment.
+*   **Backup Schedule:**
+    *   Daily backups of critical data.
+    *   Weekly full system backups.
+    *   Weekly archiving of system logs to backup tape.
+*   **Backup Storage:**
+    *   On-site storage for recent backups.
+    *   Off-site storage for two generations of system backups.
+*   **Recovery Procedures:**
+    *   Documented procedures for restoring data and systems from backups.
+    *   Regular testing of recovery procedures.
 
-## 4. User Procedures and Operation Manual
+## 6. Disaster Recovery Plan
 
-The INTPMIS provides different functionalities for various user roles. Key procedures include:
+This section outlines the disaster recovery plan.
 
-### 4.1 Project Management
+*   **Disaster Recovery Site:**
+    *   A designated location for recovering the system in the event of a disaster.
+*   **Recovery Time Objective (RTO):**
+    *   The target time for restoring the system after a disaster.  (This should be defined based on business needs, but is not specified in the provided documents).
+*   **Recovery Point Objective (RPO):**
+    *   The acceptable amount of data loss in the event of a disaster. (This should be defined based on business needs, but is not specified in the provided documents).
+*   **Disaster Recovery Procedures:**
+    *   Detailed steps for activating the disaster recovery site.
+    *   Procedures for restoring data and systems.
+    *   Communication plan for notifying stakeholders.
+*   **Testing:**
+    *   Regular disaster recovery drills to test the plan and ensure its effectiveness.
 
-*   **Browsing Project List:**
-    *   Click "View" under "Project Management" to view the project list.
-    *   Use the search function to find specific projects based on criteria like project title, client department, etc.
-    *   Use the filter function to narrow down the project list based on input values and display number of records per page.
-    *   Click "X" to redirect to the project view page.
-*   **Creating a Project:**
-    *   Refer to the "Create Project" table in the documentation for required fields and input types.
-    *   Note the dependencies between fields (e.g., hiding/showing fields based on selections).
-*   **Editing a Project:**
-    *   Click "Edit" under "Project Management."
-    *   Click the edit icon to modify the project details.
-    *   Update information, select completed status, input values, or empty input fields.
-    *   Click "Save All" to save the changes.
-    *   Handle invalid input errors and successful save messages.
-    *   Admin users (Role 6) have access to edit more fields, such as the "Date of Uploading Interim Evaluation Report."
+## 7. Roles and Responsibilities
 
-### 4.2 Wish List Management
+*   **System Administrator:** Responsible for installing, configuring, and maintaining the system.
+*   **Database Administrator:** Responsible for managing the database and ensuring data integrity.
+*   **Security Administrator:** Responsible for implementing and managing access control.
+*   **Backup Administrator:** Responsible for configuring and monitoring backups.
+*   **Disaster Recovery Coordinator:** Responsible for developing and maintaining the disaster recovery plan.
+*   **Users:** Responsible for participating in disaster recovery activities as needed.
 
-*   **Browsing Wish List:**
-    *   Click "View" under "Wish Management" to view the wish list.
-    *   Scroll the bottom bar to view details of the wish.
-    *   Use the search function to find specific wishes based on criteria.
-    *   Use the filter function to narrow down the wish list.
-    *   Export wishes using "Export Records" (searched records) or "Export All Records" (all records).
-*   **Editing a Wish:**
-    *   Input values to edit the wish details.
-    *   Click "Save All" to save the changes.
-    *   Handle invalid input errors and successful edit messages.
+## 8. Risk Assessment
 
-### 4.3 Solution List Management
+*   **Data Loss:**  Inadequate backup procedures could lead to data loss.
+*   **System Downtime:**  Hardware or software failures could cause system downtime.
+*   **Security Breaches:**  Unauthorized access could compromise data security.
+*   **Disaster Events:**  Natural disasters or other events could disrupt system operations.
 
-*   **Browsing Solution List:**
-    *   Click "View" under "Solution Management" to view the solution list.
-    *   Scroll the bottom bar to view details of the solution.
-    *   Use the search function to find specific solutions based on criteria.
-    *   Use the filter function to narrow down the solution list.
-    *   Export solutions using "Export Records" (searched records) or "Export All Records" (all records).
-*   **Editing a Solution:**
-    *   Input values to edit the solution details.
-    *   Click "Save All" to save the changes.
-    *   Handle invalid input errors and successful edit messages.
+## 9. Mitigation Strategies
 
-### 4.4 Report Management
+*   Implement robust backup and recovery procedures.
+*   Implement redundant hardware and software components.
+*   Implement strong access control mechanisms.
+*   Develop and test a comprehensive disaster recovery plan.
 
-*   **Browsing Report List:**
-    *   View the report list and details.
-    *   Use the search function to find specific reports.
-*   **Viewing a Report:**
-    *   Select a month to automatically assign start and end dates.
-    *   Click "Confirm" to display the report data within the selected month.
-*   **Printing a Report:**
-    *   Click the "Print" button to generate a preview page for printing.
+## 10.  Priority
 
-### 4.5 Log Management
+All requirements listed have a priority of "M" (Medium).  This indicates that while important, they may not be critical for initial launch but should be addressed in a timely manner.  A more detailed prioritization exercise should be conducted to determine which requirements are most critical for the initial installation and subsequent phases.
 
-*   **Browsing Log List:**
-    *   Select the tag type of log (report, wish, solution).
-    *   View log records in the list.
-    *   Click "+" to view log details.
-    *   Export records to a CSV file using "Export Records."
-*   **Canceling Reminders:**
-    *   Click the checked button to cancel the reminder for a specific record.
-    *   Select multiple records and click "Batch Checked" to cancel reminders for selected records.
+## 11.  Future Considerations
 
-## 5. Administrator Procedures
-
-Administrators have additional responsibilities, including:
-
-*   **Project Editing:** Access to edit more project fields, such as "Date of Uploading Interim Evaluation Report."
-*   **Log Management:** Monitoring and managing log records, canceling reminders, and exporting logs.
-
-## 6. Search and Export Functions
-
-*   **Search Function:** Allows users to search for projects, wishes, or solutions by selecting specific search criteria (fields of the object).
-*   **Export Function:** Allows users to export all records after a search to a CSV file.
-
-## 7. Training and Documentation
-
-*   **Training Courses and User Experience Sessions:** Provide training to users on the system's functionalities.
-*   **Program Manual:** Includes a workflow manual to guide users through the system's processes.
-*   **System Manual:** Provides technical details about the system's architecture and configuration.
-*   **User Procedures Manual:** Outlines step-by-step instructions for performing various tasks within the system.
-
-## 8. Logging
-
-The system logs all user actions and system events.  After a user creates or edits an object, the system creates a log record.  Users can check log records and cancel reminders for specific records.
-
-This document provides a comprehensive overview of the INTPMIS installation plan.  Adherence to these procedures will ensure a successful and efficient deployment of the system.
+*   Regularly review and update the installation plan, backup and recovery plan, and disaster recovery plan.
+*   Implement automated monitoring and alerting for system performance and security.
+*   Consider cloud-based solutions for backup and disaster recovery.
+*   Implement a formal change management process.
