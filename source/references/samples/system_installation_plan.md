@@ -222,111 +222,67 @@ The following table summarises the actual system installation schedule:
 <<End of Document>>
 ```
 
-Okay, I've analyzed the provided text and extracted the key information. Here's a summary of the INTPMIS system, focusing on its reports, user procedures, administrator procedures, and the User Requirement Specification:
+Okay, I've analyzed the provided text. Here's a breakdown of the document and a summary of its key points:
 
-**I. System Overview**
+**Overall Document Purpose:**
 
-The INTPMIS (I&T Project Management Information System) is designed for the Electrical and Mechanical Services Department (EMSD). It aims to improve upon the current system by providing:
+This document is a combination of a user manual for an "I&T Project Management Information System" (INTPMIS) and a User Requirement Specification (URS) for its development.  It describes the system's features, how users interact with it, and the requirements that guided its creation.
 
-*   An easy-to-use web portal.
-*   Enhanced data management.
-*   Data analysis and reporting capabilities.
-*   Workflow automation.
+**Part 1: User Manual**
 
-**II. Reports**
+This section provides instructions on how to use the INTPMIS system. It covers the following:
 
-The system includes seven different reports to analyze and show the results of projects, wishes, and solutions. These reports include:
+*   **Reports:** Describes the different types of reports available in the system, including:
+    *   Trend of I&T Wishes, Solutions, and Matched Trial Projects Report
+    *   Summary of I&T Wishes Report
+    *   Distribution of I&T Solutions by Technology Report
+    *   Cash flow for Matched Trial Projects on E&M InnoPortal Report
+    *   Statistics on I&T Projects Report
+    *   Statistics Technology on I&T Projects Report
+    *   Expenditure on I&T Projects Report
+*   **User Procedures:**
+    *   **Login:** Explains how to log in to the system using SSO or username/password.
+    *   **Project Management:** Covers browsing, creating, and editing projects.
+    *   **Wish List Management:** Covers browsing and editing wish lists.
+    *   **Solution List Management:** Covers browsing and editing solution lists.
+*   **Administrator Procedures:**
+    *   **Project Management (Admin):**  Highlights the additional fields an administrator can edit in a project.
+    *   **Log List Management:** Explains how to view and export logs, and cancel reminders.
+*   **Other Functions:**
+    *   **Search Function:** Describes how to search for projects, wishes, or solutions using specific criteria.
+    *   **Export Function:** Explains how to export records to a CSV file.
+    *   **Printing Report Function:** Explains how to print reports.
+    *   **Create Project:** Details the fields required when creating a new project.
+    *   **Logging:** Explains how to check log records and cancel reminders.
 
-1.  **Trend of I&T Wishes, Solutions, and Matched Trial Projects Report:** Shows the number of wishes, solutions, and matched projects over time (monthly).
-2.  **Summary of I&T Wishes Report:** Shows the number of wishes belonging to different divisions.
-3.  **Distribution of I&T Solutions by Technology Report:** Groups and counts the number of solutions using specific technologies.
-4.  **Cash flow for Matched Trial Projects on E&M InnoPortal Report:** Shows the total cash flow of matched projects for each division in a year.
-5.  **Statistics on I&T Projects Report:** Counts projects by division and status (complete or in-progress).  Includes "Show All" and "Filter 0 items" buttons.
-6.  **Statistics Technology on I&T Projects Report:** Counts and calculates the percentage of technologies used in projects.
-7.  **Expenditure on I&T Projects Report:** Sums the actual and projected expenditures of projects in a year, broken down by division.
+**Part 2: User Requirement Specification (URS)**
 
-**Common Report Features:**
+This section outlines the requirements for the development of the INTPMIS system. It includes:
 
-*   **Search Function:** Allows users to filter reports by month.
-*   **Export Function:** Allows users to export all records after a search to a CSV file.
-*   **Printing Report Function:** Allows users to print all reports by clicking the "Print" button.
-
-**III. User Procedures**
-
-The user procedures cover the following areas:
-
-*   **Login:**
-    *   Supports SSO (Single Sign-On) via EMSD Active Directory.
-    *   Offers username/password login as an alternative.
-*   **Project Management:**
-    *   Browsing Project List: Includes viewing, filtering, searching, and exporting projects.
-    *   Creating a Project: Details the required fields and validation.
-    *   Editing a Project: Allows users to modify project information.
-*   **Wish List Management:**
-    *   Browsing Wish List: Includes viewing, searching, filtering, and exporting wishes.
-    *   Editing a Wish: Allows users to modify wish information.
-*   **Solution List Management:**
-    *   Browsing Solution List: Includes viewing, searching, filtering, and exporting solutions.
-    *   Editing a Solution: Allows users to modify solution information.
-
-**IV. Administrator Procedures**
-
-The administrator procedures cover:
-
-*   **Project Management:**
-    *   Editing a Project: Administrators have access to more fields than regular users.
-*   **Log List:**
-    *   Browsing Log List: Includes viewing, exporting, and canceling reminders related to log entries.
-
-**V. User Requirement Specification (URS)**
-
-The URS document outlines the user requirements for the INTPMIS system. Key aspects include:
-
-*   **Proposed System Overview:**  Details the goals of the new system.
-*   **Future Business Processes:** Lists the key business processes supported by the system (e.g., User Login, View Project List, Create Project).
-*   **UI & UX Design:** Provides mockups of key screens (Login, Project Management, Wish Management, Solution Management, Report Management, Log Management).
-*   **Functional Requirements:** Lists the functional requirements (REQ-SYS-XXX) with details on priority, description, frequency of use, acceptance criteria, and related business processes.  Examples include:
-    *   Login
-    *   Project List
-    *   Create a Project
-    *   View or Edit a Project
-    *   Wish List
-    *   View or Edit a Wish
-    *   Solution List
-    *   View and Edit a Solution
-    *   Report List
-    *   View Report
-    *   Log List
-    *   View Log List
-    *   Upload File
-*   **Non-Functional Requirements:** Lists the non-functional requirements (REQ-SR/UR/SCR-XXX) with details on priority and description.  Examples include:
-    *   Response Time
-    *   Service Time
-    *   Export
-    *   Scalability
-    *   System Performance
-    *   User Interface Requirement
-    *   Function Access Rights
-    *   Access to Data
-    *   System Backup
+*   **Proposed System Overview:** Describes the enhanced aspects of the proposed system, including working environment, data management, data analysis, and workflow.
+*   **Future Business Process:** Lists the future business processes that the system will support, such as user login, viewing project lists, creating projects, and viewing reports.
+*   **UI & UX Design:** Provides screenshots and descriptions of the user interface for various parts of the system, including the login page, project management, wish management, solution management, report management, and log management.
+*   **Functional Requirements:** Lists the functional requirements of the system, such as login, project list, create a project, view or edit a project, wish list, view or edit a wish, solution list, view and edit a solution, report list, view report, log list, view log list, and upload files.
+*   **Non-functional Requirements:** Lists the non-functional requirements of the system, such as response time, service time, export, scalability, system performance, user interface requirement, function access rights, access to data, and system backup.
 
 **Key Takeaways:**
 
-*   INTPMIS is a comprehensive system designed to manage I&T projects, wishes, and solutions within EMSD.
-*   It provides robust reporting and analysis capabilities.
-*   User procedures are well-documented.
-*   The URS document provides a detailed specification of the system's requirements.
+*   **Comprehensive System:** INTPMIS is designed to manage I&T projects, wishes, and solutions within the Electrical and Mechanical Services Department (EMSD).
+*   **User-Friendly:** The system aims to be user-friendly with a web-based interface and features like search, filtering, and export.
+*   **Role-Based Access:**  Different user roles (e.g., regular users, administrators) have different levels of access and functionality.
+*   **Reporting and Analysis:**  The system provides various reports to analyze I&T trends and project performance.
+*   **Detailed Requirements:** The URS section provides a detailed specification of the system's functional and non-functional requirements.
 
-Let me know if you'd like me to elaborate on any specific aspect of the system!
+In summary, this document serves as both a user guide and a development specification for the INTPMIS system, providing a comprehensive overview of its features, functionality, and requirements.
 
 
 # System Installation Plan
 
-This document outlines the system installation plan based on the provided requirements and specifications. It covers functional and technical requirements, focusing on system controls, backup and recovery, and disaster recovery.
+This document outlines the system installation plan based on the provided requirements and specifications. It covers functional and technical requirements, system specifications, and backup/recovery considerations.
 
 ## 1. Introduction
 
-This plan details the steps required to successfully install and configure the system, ensuring it meets the defined requirements for data access, backup, recovery, and disaster recovery.
+This plan details the steps required to install and configure the system, ensuring it meets the defined functional and non-functional requirements. It also addresses backup and recovery procedures to maintain data integrity and system availability.
 
 ## 2. Requirements Summary
 
@@ -334,131 +290,138 @@ This section summarizes the key requirements driving the system installation.
 
 ### 2.1 Functional Requirements
 
-*   **REQ-SCR-002: Access to Data:**  The system must allow for defining access rights for users to specific data, conditionally. It must also support access monitoring for selected data.
-*   **REQ-SCR-003: System Backup:** The system must meet general backup requirements, including data, system, and all audit logging information.
+*   **REQ-SCR-002: Access to Data:**
+    *   Define access rights for users to access particular data on a conditional basis.
+    *   Define access monitoring for selected data.
+
+*   **REQ-SCR-003: System Backup:**
+    *   Meet general backup requirements including data and system.
+    *   Backup all audit logging information.
 
 ### 2.2 Technical Requirements
 
-*   **TR-SBR-001: Server House Keeping:** System logs must be archived to backup tape weekly.
+*   **TR-SBR-001: Server House Keeping:**
+    *   System logs must be archived to backup tape weekly.
+
 *   **TR-SBR-002: Backup, Recovery and System Archive:**
     *   Provide daily backup.
     *   Provide weekly system backup.
     *   Provide 2 generations of system backup stored off-site.
     *   Provide system activity logs and reports.
+
 *   **TR-DRR-001: System Disaster Recovery:**
     *   Participate in disaster recovery activities and complete assigned tasks following the disaster recovery plan.
     *   Coordinate with new system users to participate in disaster recovery activities.
-    *   Resume the entire system from the disaster recovery site to the normal production environment.
+    *   Resume the whole system from the disaster recovery site to the normal production environment.
 
-## 3. System Specification
+## 3. System Specifications
 
-The system provides the following functions, categorized as follows:
+The system provides the following functions:
 
-| Item | Category             | System Functions              | N/A |------|----------------------|-------------------------------| N/A |---|---|---| N/A | 1    | Information Viewing  | View Project List and Detail  | N/A |---|---|---| N/A | 2    | Content Management   | Create a Project              | N/A |---|---|---| N/A | 3    | Content Management   | Edit a Project                | N/A |---|---|---| N/A | 4    | Information Viewing  | Search Projects               | N/A |---|---|---| N/A | 5    | Information Viewing  | Filter Projects               | N/A |---|---|---| N/A | 6    | Workflow Application | Export Projects               | N/A |---|---|---| N/A | 7    | Information Viewing  | View Wish List and Detail     | N/A |---|---|---| N/A | 8    | Content Management   | Edit a Wish                   | N/A |---|---|---| N/A | 9    | Information Viewing  | Search Wishes                 | N/A |---|---|---| N/A | 10   | Information Viewing  | Filter Wishes                 | N/A |---|---|---| N/A | 11   | Workflow Application | Export Wishes                 | N/A |---|---|---| N/A | 12   | Information Viewing  | View Solution List and Detail | N/A |---|---|---| N/A | 13   | Content Management   | Edit a Solution               | N/A |---|---|---| N/A | 14   | Information Viewing  | Search Solutions              | N/A |---|---|---| N/A | 15   | Information Viewing  | Filter Solutions              | N/A |---|---|---| N/A | 16   | Workflow Application | Export Solutions              | N/A |---|---|---| N/A | 17   | Information Viewing  | View Report List and Detail   | N/A |---|---|---| N/A | 18   | Workflow Application | Export Report                 | N/A |---|---|---| N/A | 19   | Information Viewing  | View Log List and Detail      | N/A |---|---|---| N/A | 20   | Content Management   | Cancel Reminder for Log       | N/A |---|---|---|
+*   **Information Viewing:**
+    *   View Project List and Detail
+    *   View Wish List and Detail
+    *   View Solution List and Detail
+    *   View Report List and Detail
+    *   View Log List and Detail
+    *   Search Projects
+    *   Search Wishes
+    *   Search Solutions
+    *   Filter Projects
+    *   Filter Wishes
+    *   Filter Solutions
+
+*   **Content Management:**
+    *   Create a Project
+    *   Edit a Project
+    *   Edit a Wish
+    *   Edit a Solution
+    *   Cancel Reminder for Log
+
+*   **Workflow Application:**
+    *   Export Projects
+    *   Export Wishes
+    *   Export Solutions
+    *   Export Report
+
 ## 4. Installation Steps
 
-This section outlines the high-level steps for installing the system.  Specific details for each step will be documented in separate, more detailed procedures.
+This section outlines the steps required to install the system.  Specific steps will vary depending on the chosen technology stack and deployment environment.
 
-1.  **Environment Preparation:**
-    *   Provision necessary hardware and software infrastructure (servers, databases, operating systems, etc.).
-    *   Configure network connectivity.
-    *   Install and configure any prerequisite software.
+1.  **Environment Setup:**
+    *   Provision necessary hardware and software resources (servers, databases, etc.).
+    *   Configure network settings and security policies.
+    *   Install operating system and required dependencies.
+
 2.  **Software Installation:**
     *   Install the system software components.
-    *   Configure the system based on the system specifications.
-3.  **Data Migration (if applicable):**
-    *   Migrate existing data to the new system.
-    *   Verify data integrity after migration.
-4.  **Access Control Configuration:**
+    *   Configure the system based on the defined requirements.
+
+3.  **Database Setup:**
+    *   Create and configure the database.
+    *   Import initial data (if applicable).
+
+4.  **Security Configuration:**
     *   Implement access control mechanisms based on REQ-SCR-002.
-    *   Define user roles and permissions.
-    *   Configure access monitoring.
+    *   Configure user authentication and authorization.
+    *   Implement data encryption (if required).
+
 5.  **Backup and Recovery Configuration:**
     *   Configure daily and weekly backups as per TR-SBR-002.
-    *   Configure off-site storage for backup generations.
-    *   Implement system activity logging and reporting.
-    *   Configure weekly system log archiving to backup tape as per TR-SBR-001.
-6.  **Disaster Recovery Setup:**
-    *   Establish a disaster recovery site.
-    *   Develop and document a disaster recovery plan.
-    *   Configure replication or other mechanisms for data and system recovery.
-7.  **Testing:**
-    *   Conduct thorough testing of all system functions.
-    *   Test access control mechanisms.
-    *   Perform backup and recovery testing.
-    *   Conduct disaster recovery drills.
-8.  **User Training:**
-    *   Provide training to users on the new system.
-    *   Include training on disaster recovery procedures.
-9.  **Go-Live:**
+    *   Set up off-site storage for backups (2 generations).
+    *   Configure system activity logs and reports.
+    *   Configure system log archiving to backup tape weekly (TR-SBR-001).
+
+6.  **Testing:**
+    *   Perform functional testing to ensure all system functions are working as expected.
+    *   Perform performance testing to ensure the system meets performance requirements.
+    *   Perform security testing to identify and address any security vulnerabilities.
+    *   Test the backup and recovery procedures.
+
+7.  **Deployment:**
     *   Deploy the system to the production environment.
-    *   Monitor system performance and stability.
-10. **Post-Installation Support:**
-    *   Provide ongoing support and maintenance.
-    *   Address any issues or bugs that arise.
+    *   Monitor the system performance and stability.
 
 ## 5. Backup and Recovery Plan
 
-This section details the backup and recovery procedures.
+This section details the backup and recovery procedures to ensure data integrity and system availability.
 
-*   **Backup Schedule:**
-    *   Daily backups of critical data.
-    *   Weekly full system backups.
-    *   Weekly archiving of system logs to backup tape.
-*   **Backup Storage:**
-    *   On-site storage for recent backups.
-    *   Off-site storage for two generations of system backups.
-*   **Recovery Procedures:**
-    *   Documented procedures for restoring data and systems from backups.
-    *   Regular testing of recovery procedures.
+### 5.1 Backup Procedures
 
-## 6. Disaster Recovery Plan
+*   **Daily Backup:** Perform a daily backup of the database and critical system files.
+*   **Weekly Backup:** Perform a full weekly backup of the entire system, including the operating system, applications, and data.
+*   **Off-site Storage:** Store two generations of weekly backups off-site for disaster recovery purposes.
+*   **Log Archiving:** Archive system logs to backup tape weekly.
 
-This section outlines the disaster recovery plan.
+### 5.2 Recovery Procedures
 
-*   **Disaster Recovery Site:**
-    *   A designated location for recovering the system in the event of a disaster.
-*   **Recovery Time Objective (RTO):**
-    *   The target time for restoring the system after a disaster.  (This should be defined based on business needs, but is not specified in the provided documents).
-*   **Recovery Point Objective (RPO):**
-    *   The acceptable amount of data loss in the event of a disaster. (This should be defined based on business needs, but is not specified in the provided documents).
-*   **Disaster Recovery Procedures:**
-    *   Detailed steps for activating the disaster recovery site.
-    *   Procedures for restoring data and systems.
-    *   Communication plan for notifying stakeholders.
-*   **Testing:**
-    *   Regular disaster recovery drills to test the plan and ensure its effectiveness.
+*   **Data Recovery:** In the event of data loss, restore the database from the most recent backup.
+*   **System Recovery:** In the event of a system failure, restore the system from the most recent full backup.
+*   **Disaster Recovery:** In the event of a disaster, restore the system from the off-site backups at the disaster recovery site.  Follow the procedures outlined in the disaster recovery plan, as per TR-DRR-001.
+
+## 6. Security Considerations
+
+*   Implement strong passwords and multi-factor authentication.
+*   Regularly update security patches and software versions.
+*   Monitor system logs for suspicious activity.
+*   Restrict access to sensitive data and system resources.
+*   Conduct regular security audits.
 
 ## 7. Roles and Responsibilities
 
-*   **System Administrator:** Responsible for installing, configuring, and maintaining the system.
-*   **Database Administrator:** Responsible for managing the database and ensuring data integrity.
-*   **Security Administrator:** Responsible for implementing and managing access control.
-*   **Backup Administrator:** Responsible for configuring and monitoring backups.
-*   **Disaster Recovery Coordinator:** Responsible for developing and maintaining the disaster recovery plan.
-*   **Users:** Responsible for participating in disaster recovery activities as needed.
+This section defines the roles and responsibilities of the individuals involved in the system installation.
 
-## 8. Risk Assessment
+*   **System Administrator:** Responsible for installing and configuring the system, managing backups, and ensuring system security.
+*   **Database Administrator:** Responsible for managing the database, including backups and recovery.
+*   **Security Administrator:** Responsible for implementing and maintaining security policies.
+*   **Application Developer:** Responsible for developing and maintaining the system software.
+*   **Project Manager:** Responsible for overseeing the entire installation process and ensuring that it is completed on time and within budget.
 
-*   **Data Loss:**  Inadequate backup procedures could lead to data loss.
-*   **System Downtime:**  Hardware or software failures could cause system downtime.
-*   **Security Breaches:**  Unauthorized access could compromise data security.
-*   **Disaster Events:**  Natural disasters or other events could disrupt system operations.
+## 8.  Contingency Plan
 
-## 9. Mitigation Strategies
+*   **Rollback Plan:** In case of a failed installation, a rollback plan should be in place to revert the system to its previous state.  This includes having backups of the previous system configuration and data.
+*   **Escalation Procedures:**  Clearly defined escalation procedures should be in place to address any issues that arise during the installation process.
 
-*   Implement robust backup and recovery procedures.
-*   Implement redundant hardware and software components.
-*   Implement strong access control mechanisms.
-*   Develop and test a comprehensive disaster recovery plan.
+## 9.  Conclusion
 
-## 10.  Priority
-
-All requirements listed have a priority of "M" (Medium).  This indicates that while important, they may not be critical for initial launch but should be addressed in a timely manner.  A more detailed prioritization exercise should be conducted to determine which requirements are most critical for the initial installation and subsequent phases.
-
-## 11.  Future Considerations
-
-*   Regularly review and update the installation plan, backup and recovery plan, and disaster recovery plan.
-*   Implement automated monitoring and alerting for system performance and security.
-*   Consider cloud-based solutions for backup and disaster recovery.
-*   Implement a formal change management process.
+This System Installation Plan provides a framework for successfully installing and configuring the system. By following the steps outlined in this plan, the system can be deployed in a secure and reliable manner, meeting the defined functional and technical requirements.  Regular review and updates to this plan are recommended to ensure its continued relevance and effectiveness.
